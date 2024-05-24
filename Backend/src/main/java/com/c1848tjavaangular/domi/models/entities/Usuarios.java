@@ -1,4 +1,4 @@
-package com.c1848tjavaangular.domi.model.entities;
+package com.c1848tjavaangular.domi.models.entities;
 
 import java.io.Serializable;
 import java.util.Date;

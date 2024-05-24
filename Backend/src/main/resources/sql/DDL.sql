@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     apellidos VARCHAR(50) NOT NULL,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(50) NOT NULL,
-    telefono VARCHAR(15),
+    telefono VARCHAR(15) NOT NULL,
     foto VARCHAR(255),
     email VARCHAR(50) NOT NULL UNIQUE,
     direccion VARCHAR(50),

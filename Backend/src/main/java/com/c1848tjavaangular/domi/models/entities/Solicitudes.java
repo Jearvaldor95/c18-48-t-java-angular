@@ -35,8 +35,11 @@ public class Solicitudes implements Serializable{
     private String resena;
     private Integer estrellas;
 
+    @ManyToOne 
+     @JoinColumn(name="idservicio_profesion")
+     private Solicitudes solicitud;
     @ManyToOne
-      @JoinColumn(name="idservicio_profesion")
-      private List<ServicioProfesion> ServicioProfesion;
+     @JoinColumn(name="idusuario")
+     private Usuarios usuario;
 
 }

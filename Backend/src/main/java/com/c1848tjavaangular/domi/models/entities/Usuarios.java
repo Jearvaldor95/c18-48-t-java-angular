@@ -33,6 +33,7 @@ public class Usuarios implements Serializable {
     private String username;
     @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
     private String telefono;
     private String foto;
     @Column(nullable = false, unique = true)
@@ -42,13 +43,5 @@ public class Usuarios implements Serializable {
     @Column(nullable = false)
     private boolean isProfesional;
     
-    @OneToMany
-      @JoinColumn(name="idusuario")
-      private List<Solicitudes> Solicitudes;
-
-    @OneToMany
-      @JoinColumn(name="idusuario")  
-      private List<ServicioProfesion> ServicioProfesion;
-
-
+    
 }

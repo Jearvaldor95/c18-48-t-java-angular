@@ -25,11 +25,7 @@ public class Solicitudes implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="idsolicitud")
-    private Integer idSolicitud;
-    @Column(name="idservicio_profesion")
-    private Integer idServicioProfesion;
-    @Column(name="idusuario")
-    private Integer idUsuario;
+    private Integer idSolicitud;;
     private String mensaje;
     private String estado;
     private String resena;

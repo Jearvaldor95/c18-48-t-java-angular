@@ -24,10 +24,6 @@ public class ServicioProfesion implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idservicio_profesion")
     private Integer idServicioProfesion;
-    @Column(name = "idusuario")
-    private Integer idUsuario;
-    @Column(name = "idservicio")
-    private Integer idServicio;
 
     @ManyToOne
      @JoinColumn(name = "idservicio")

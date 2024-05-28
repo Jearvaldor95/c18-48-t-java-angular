@@ -13,6 +13,7 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 
 @Component
 public class JwtService {
@@ -36,7 +37,7 @@ public class JwtService {
         String token = Jwts.builder()
                 .claims(extraClaims)
                 .subject(user.getEmail())
-                .claim("username", user.getUsername())
+                .claim("idUsuario", user.getIdUsuarios())
                 .issuedAt(new Date())
                 .expiration(expireDate)
                 .signWith(getKey(),SignatureAlgorithm.HS256)
@@ -53,12 +54,26 @@ public class JwtService {
     }
 
     public String getEmailFromToken(String token) {
-        Claims claims = Jwts.parser()
+        return getClaim(token, Claims::getSubject);
+    }
+
+    public Integer getIdUsuarioFromToken(String token) {
+        return getClaim(token, claims -> claims.get("idUsuario", Integer.class));
+    }
+
+    private Claims getAllClaims(String token)
+    {
+        return Jwts.parser()
                 .setSigningKey(getKey())
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
-        return claims.getSubject();
+    }
+
+    public <T> T getClaim(String token, Function<Claims,T> claimsResolver)
+    {
+        final Claims claims=getAllClaims(token);
+        return claimsResolver.apply(claims);
     }
 
     public boolean validateToken(String token) {

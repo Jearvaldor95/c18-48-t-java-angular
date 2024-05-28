@@ -52,6 +52,7 @@ public class AuthServiceImple implements AuthService {
             user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
             user.setEmail(registerDto.getEmail());
             user.setTelefono(registerDto.getTelefono());
+            user.setDireccion(registerDto.getDireccion());
             user.setIsProfesional(registerDto.getIsProfesional());
 
             return usuariosRepository.save(user);

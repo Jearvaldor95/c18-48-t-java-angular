@@ -21,6 +21,8 @@ public class RegisterDto {
     @NotNull
     private String telefono;
     @NotNull
+    private String direccion;
+    @NotNull
     private Boolean isProfesional;
 
 }

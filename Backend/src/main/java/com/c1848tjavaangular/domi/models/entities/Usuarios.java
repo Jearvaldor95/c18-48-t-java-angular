@@ -1,6 +1,7 @@
 package com.c1848tjavaangular.domi.models.entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +24,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Table(name="usuarios")
 @Entity
 public class Usuarios implements Serializable {
@@ -50,11 +50,11 @@ public class Usuarios implements Serializable {
     @NotNull
     private String email;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date fecha_nacimiento;
+    private LocalDate fecha_nacimiento;
     @NotNull
     private String direccion;
-    @Column(nullable = false)
     @NotNull
+    @Column(name = "isprofesional",nullable = false)
     private Boolean isProfesional;
     
     

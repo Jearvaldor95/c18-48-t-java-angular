@@ -4,7 +4,7 @@ import com.c1848tjavaangular.domi.auth.jwt.JwtService;
 import com.c1848tjavaangular.domi.dtos.PasswordDto;
 import com.c1848tjavaangular.domi.dtos.UsuariosDto;
 import com.c1848tjavaangular.domi.services.UsuariosService;
-import com.c1848tjavaangular.domi.services.imple.UploadFileService;
+import com.c1848tjavaangular.domi.services.impl.UploadFileService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;

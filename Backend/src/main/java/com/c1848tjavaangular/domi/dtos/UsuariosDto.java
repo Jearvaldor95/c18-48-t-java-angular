@@ -22,4 +22,5 @@ public class UsuariosDto {
     private LocalDate fecha_nacimiento;
     private String direccion;
     private Boolean isProfesional;
+
 }

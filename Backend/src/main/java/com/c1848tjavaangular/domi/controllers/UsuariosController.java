@@ -43,5 +43,6 @@ public class UsuariosController {
     public ResponseEntity<?> getUsuario(@RequestHeader("token") String token){
         Integer idUsuario = jwtService.getIdUsuarioFromToken(token);
         return ResponseEntity.ok(usuariosService.findById(idUsuario));
+
     }
 }

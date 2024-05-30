@@ -1,9 +1,11 @@
 package com.c1848tjavaangular.domi.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.c1848tjavaangular.domi.models.entities.Solicitudes;
+import org.springframework.stereotype.Repository;
 
-public interface SolicitudesRepository extends CrudRepository<Solicitudes, Integer> {
+@Repository
+public interface SolicitudesRepository extends JpaRepository<Solicitudes, Integer> {
     
 }

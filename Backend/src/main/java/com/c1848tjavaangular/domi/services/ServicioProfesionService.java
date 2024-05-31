@@ -3,16 +3,27 @@ package com.c1848tjavaangular.domi.services;
 import java.util.List;
 
 import com.c1848tjavaangular.domi.dtos.ServicioProfesionDto;
+import com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto;
 import com.c1848tjavaangular.domi.models.entities.ServicioProfesion;
 
 public interface ServicioProfesionService {
-    List<ServicioProfesion> listAll();
+    // Todos los usuarios profesionales con sus servicios
+    List<ServiciosUsuarioDto> findAllServiciosAndUsuarios();
 
-    ServicioProfesion save(ServicioProfesionDto servicioProfesion);
+    ServicioProfesionDto save(Integer idUsuario,ServicioProfesionDto servicioProfesionDto);
 
-    ServicioProfesion findById(Integer id);
+    ServicioProfesionDto findById(Integer id);
 
-    void delete(ServicioProfesion servicioProfesion);
+    // Usuarios profesionales con sus servicios por nombre servicio
+    List<ServiciosUsuarioDto> findByServiciosNombre(String nombre);
+
+    // Usuarios profesionales con sus servicios por nombre servicio y direccion
+    List<ServiciosUsuarioDto> findByServiciosNombreAndUsuariosDireccion(String nombre, String direccion);
+
+    // Usuarios profesionales con sus servicios por direccion
+    List<ServiciosUsuarioDto> findByUsuariosDireccion(String direccion);
+
+    ServicioProfesionDto delete(Integer id);
 
     boolean existsById(Integer id);
 }

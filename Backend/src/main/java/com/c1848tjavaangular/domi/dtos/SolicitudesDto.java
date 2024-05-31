@@ -2,8 +2,6 @@ package com.c1848tjavaangular.domi.dtos;
 
 import java.io.Serializable;
 
-import com.c1848tjavaangular.domi.models.entities.ServicioProfesion;
-import com.c1848tjavaangular.domi.models.entities.Usuarios;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;

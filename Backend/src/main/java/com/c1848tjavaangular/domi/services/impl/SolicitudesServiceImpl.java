@@ -2,12 +2,12 @@ package com.c1848tjavaangular.domi.services.impl;
 
 import java.util.List;
 
+import com.c1848tjavaangular.domi.dtos.SolicitudesProfesionalDto;
+import com.c1848tjavaangular.domi.dtos.SolicitudesUsuarioDto;
 import com.c1848tjavaangular.domi.exceptions.AppNotFoundException;
 import com.c1848tjavaangular.domi.mappers.SolicitudesMapper;
 import com.c1848tjavaangular.domi.models.entities.Usuarios;
-import com.c1848tjavaangular.domi.repository.ServiciosRepository;
 import com.c1848tjavaangular.domi.repository.UsuariosRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.c1848tjavaangular.domi.dtos.SolicitudesDto;
@@ -77,6 +77,36 @@ public class SolicitudesServiceImpl implements SolicitudesService {
         SolicitudesDto solicitudesDto = solicitudesMapper.toSolicitudesDto(solicitude);
         solicitudesRepository.deleteById(idSolicitud);
         return solicitudesDto;
+    }
+
+    @Override
+    public List<SolicitudesUsuarioDto> findSolicitudesByProfessionalId(Integer idUsuario) {
+        return solicitudesRepository.findSolicitudesByProfessionalId(idUsuario);
+    }
+
+    @Override
+    public List<SolicitudesUsuarioDto> findSolicitudesTerminadasByProfessionalId(Integer idUsuario) {
+        return solicitudesRepository.findSolicitudesTerminadasByProfessionalId(idUsuario);
+    }
+
+    @Override
+    public List<SolicitudesUsuarioDto> findSolicitudesPendientesByProfessionalId(Integer idUsuario) {
+        return solicitudesRepository.findSolicitudesPendientesByProfessionalId(idUsuario);
+    }
+
+    @Override
+    public List<SolicitudesProfesionalDto> findSolicitudesByUserId(Integer idUsuario) {
+        return solicitudesRepository.findSolicitudesByUserId(idUsuario);
+    }
+
+    @Override
+    public List<SolicitudesProfesionalDto> findSolicitudesTerminadasByUserId(Integer idUsuario) {
+        return solicitudesRepository.findSolicitudesPendientesByUserId(idUsuario);
+    }
+
+    @Override
+    public List<SolicitudesProfesionalDto> findSolicitudesPendientesByUserId(Integer idUsuario) {
+        return solicitudesRepository.findSolicitudesPendientesByUserId(idUsuario);
     }
 
     @Override

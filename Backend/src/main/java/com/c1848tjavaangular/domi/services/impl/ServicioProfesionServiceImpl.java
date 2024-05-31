@@ -1,8 +1,13 @@
 package com.c1848tjavaangular.domi.services.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto;
+import com.c1848tjavaangular.domi.exceptions.AppNotFoundException;
 import com.c1848tjavaangular.domi.mappers.ServicioProfesionMapper;
+import com.c1848tjavaangular.domi.models.entities.Usuarios;
+import com.c1848tjavaangular.domi.repository.UsuariosRepository;
 import org.springframework.stereotype.Service;
 
 import com.c1848tjavaangular.domi.dtos.ServicioProfesionDto;
@@ -13,43 +18,62 @@ import com.c1848tjavaangular.domi.services.ServicioProfesionService;
 public class ServicioProfesionServiceImpl implements ServicioProfesionService{
     private final ServicioProfesionRepository servicioProfesionRepository;
     private final ServicioProfesionMapper servicioProfesionMapper;
+    private final UsuariosRepository usuariosRepository;
 
-    public ServicioProfesionServiceImpl(ServicioProfesionRepository servicioProfesionRepository, ServicioProfesionMapper servicioProfesionMapper){
+    public ServicioProfesionServiceImpl(ServicioProfesionRepository servicioProfesionRepository, ServicioProfesionMapper servicioProfesionMapper, UsuariosRepository usuariosRepository){
         this.servicioProfesionRepository = servicioProfesionRepository;
         this.servicioProfesionMapper = servicioProfesionMapper;
+        this.usuariosRepository = usuariosRepository;
+    }
+
+
+    @Override
+    public List<ServiciosUsuarioDto> findAllServiciosAndUsuarios() {
+        return servicioProfesionRepository.findAllServiciosAndUsuarios();
     }
 
     @Override
-    public List<ServicioProfesion> listAll() {
-
-        return(List)servicioProfesionRepository.findAll();
+    public ServicioProfesionDto save(Integer idUsuario,ServicioProfesionDto servicioProfesionDto) {
+        Usuarios usuario = usuariosRepository.findById(idUsuario)
+                .orElseThrow(()-> new AppNotFoundException("Usuario not found!"));
+        ServicioProfesion servicioProfesion = servicioProfesionMapper.toServicioProfesion(servicioProfesionDto);
+        servicioProfesion.setIdUsuario(usuario.getIdUsuarios());
+        return servicioProfesionMapper.toServicioProfesionDto(servicioProfesionRepository.save(servicioProfesion));
     }
 
     @Override
-    public ServicioProfesion save(ServicioProfesionDto servicioProfesionDto) {
-
-        ServicioProfesion servicioProfesion = ServicioProfesion.builder()
-                                           .idServicioProfesion(servicioProfesionDto.getIdServicioProfesion())
-                                           .build();
-        return servicioProfesionRepository.save(servicioProfesion);
+    public ServicioProfesionDto findById(Integer id) {
+        ServicioProfesion servicioProfesion = servicioProfesionRepository.findById(id)
+                .orElseThrow(()-> new AppNotFoundException("Servicio not found"));
+        return servicioProfesionMapper.toServicioProfesionDto(servicioProfesion);
     }
 
     @Override
-    public ServicioProfesion findById(Integer id) {
-        
-        return servicioProfesionRepository.findById(id).orElse(null);
+    public List<ServiciosUsuarioDto> findByServiciosNombre(String nombre) {
+        return servicioProfesionRepository.findByServiciosNombre(nombre);
     }
 
     @Override
-    public void delete(ServicioProfesion servicioProfesion) {
-        
-        servicioProfesionRepository.delete(servicioProfesion);
+    public List<ServiciosUsuarioDto> findByServiciosNombreAndUsuariosDireccion(String nombre, String direccion) {
+        return servicioProfesionRepository.findByServiciosNombreAndUsuariosDireccion(nombre, direccion);
+    }
+
+    @Override
+    public List<ServiciosUsuarioDto> findByUsuariosDireccion(String direccion) {
+        return servicioProfesionRepository.findByUsuariosDireccion(direccion);
+    }
+
+    @Override
+    public ServicioProfesionDto delete(Integer id) {
+        ServicioProfesion servicioProfesion = servicioProfesionRepository.findById(id)
+                .orElseThrow(()-> new AppNotFoundException("Servicio not found!"));
+        ServicioProfesionDto servicioProfesionDto = servicioProfesionMapper.toServicioProfesionDto(servicioProfesion);
+        servicioProfesionRepository.deleteById(id);
+        return servicioProfesionDto;
     }
 
     @Override
     public boolean existsById(Integer id) {
-        
-        return servicioProfesionRepository.existsById(id);
+        return false;
     }
-    
 }

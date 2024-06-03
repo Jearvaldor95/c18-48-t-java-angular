@@ -2,6 +2,7 @@ package com.c1848tjavaangular.domi.controllers;
 
 import com.c1848tjavaangular.domi.auth.jwt.JwtService;
 import com.c1848tjavaangular.domi.dtos.ServicioProfesionDto;
+import com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto;
 import com.c1848tjavaangular.domi.services.ServicioProfesionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,12 @@ public class ServicioProfesionController {
         this.servicioProfesionService = servicioProfesionService;
         this.jwtService = jwtService;
     }
+    
+    @GetMapping("/servicio/nombreServicio")
+    public ResponseEntity<?> getProfesional(@PathVariable String nombreServicio){
+       return ResponseEntity.ok(servicioProfesionService.findByServiciosNombre(nombreServicio));
+    }
+
 
     @PostMapping("/servicio")
     public ResponseEntity<ServicioProfesionDto> save(@RequestHeader("token") String token, @RequestBody ServicioProfesionDto servicioProfesionDto){

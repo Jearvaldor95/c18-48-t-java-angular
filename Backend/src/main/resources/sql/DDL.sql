@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     nombre VARCHAR(50) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
     username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
     foto VARCHAR(255),
     email VARCHAR(50) NOT NULL UNIQUE,

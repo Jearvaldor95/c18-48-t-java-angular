@@ -38,7 +38,7 @@ WHERE so.estado = 'Pending';
 
 -- Profesionales con servicio especifico
 SELECT u.nombre, u.apellidos, u.telefono, u.email
-FROM usuarios u
+FROM usua;rios u
 JOIN servicio_profesion sp ON u.idusuario = sp.idusuario
 JOIN servicios s ON sp.idservicio = s.idservicio
 WHERE s.nombre = 'Plumbing';

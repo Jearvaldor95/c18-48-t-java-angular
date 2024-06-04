@@ -1,0 +1,24 @@
+footer{
+    background: #f7f9faff;
+}
+
+.footerLink{
+    color: black;
+}
+
+.footerLink:hover{
+    text-decoration: underline;
+}
+
+.socialMedia{
+    color: black;
+}
+
+.socialMedia:hover{
+    color: grey;
+}
+
+.socialMedia:active{
+    color: #e6edf2ff;
+    transition: 0.2s;
+}

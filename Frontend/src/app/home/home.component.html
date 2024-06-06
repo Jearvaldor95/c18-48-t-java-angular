@@ -1,98 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <header>
-        <app-nav-bar></app-nav-bar>
-    </header>
-    <div>
-        <div>
-            <img id="banner" src="assets/home/banner.jpg" alt="banner">
-        </div>
-        <div class="row container d-flex">
-            <div class="d-flex">
-                <div class="col-md-1 bg-primary">1</div>
-                <div class="col-md-1 bg-secondary">2</div>
-                <div class="col-md-1 bg-success">3</div>
-                <div class="col-md-1 bg-dark">4</div>
-                <div class="col-md-1 bg-warning">5</div>
-                <div class="col-md-1 bg-info">6</div>
-                <div class="col-md-1 bg-light">7</div>
-                <div class="col-md-1 bg-danger">8</div>
-                <div class="col-md-1 bg-primary">9</div>
-                <div class="col-md-1 bg-secondary">10</div>
-                <div class="col-md-1 bg-success">11</div>
-                <div class="col-md-1 bg-danger">12</div>
-        </div>
-            <div>
-                <p>234</p>
-                <p>Professionales</p>
+<app-nav-bar></app-nav-bar>
+<div class="mt-5">
+    <div class="row mb-5 mx-0">
+        <div id="containerLeft" class="row col-6 pb-4">
+            <div class="mb-3">
+                <h1 id="titleHome">¡Todos los servicios que necesitas, en un solo lugar!</h1>
             </div>
-            <div>
-                <p>+60</p>
-                <p>Categorias</p>
+            <div id="subTextHome" class="mb-5">
+                <p>Somos más que una aplicación; somos tu aliado en el hogar para resolver tus necesidades diarias.
+                    ¿Tienes una fuga de agua? ¿Necesitas reparar un enchufe? ¿Quieres podar tu jardín? No te preocupes,
+                    nuestros expertos están listos para ayudarte.</p>
             </div>
-            <div>
-                <p>+1000</p>
-                <p>Servicios</p>
+            <button id="saberMas">Saber más</button>
+        </div>
+        <div class="banner col-6 containerRight px-sm-5">
+            <img src="assets/home/banner.jpg" alt="banner">
+        </div>
+    </div>
+    <div class="frame2 py-5">
+        <div class="row py-5 mx-5 px-5">
+            <div class="col-4 text-center">
+                <p class="contadores">234</p>
+                <p class="contadoresText">Professionales</p>
+            </div>
+            <div class="col-4 text-center">
+                <p class="contadores">+60</p>
+                <p class="contadoresText">Categorias</p>
+            </div>
+            <div class="col-4 text-center">
+                <p class="contadores">+1000</p>
+                <p class="contadoresText">Servicios</p>
             </div>
         </div>
-        <div class="container justify-content-center">
-            <h2>Servicios a domicilio, a tu alcance</h2>
+        <div class="text-center py-5">
+            <h2 class="subTitle">Hazlo Fácil, Hazlo en Casa</h2>
         </div>
         <div>
-            <p>En Domi, comprendemos que tu tiempo y tranquilidad son invaluables. Por eso, hemos creado una experiencia
+            <p class="subTextHome2 pb-5">En Domi, comprendemos que tu tiempo y tranquilidad son invaluables. Por eso,
+                hemos creado una experiencia
                 única que combina confiabilidad, comodidad y atención personalizada. Somos la plataforma que conecta a
                 usuarios como tú con profesionales confiables para resolver sus necesidades en el hogar.</p>
         </div>
-        <div>
-            <img src="" alt="perfilFoto">
-            <p>Profesionales Verificados</p>
-            <p>Cada plomero, electricista, jardinero o especialista en limpieza de autos ha demostrado su experiencia y
-                habilidades.</p>
+        <div class="text-center py-5">
+            <h2 class="subTitle">¿Por qué elegirnos?</h2>
         </div>
-        <div>
-            <img src="" alt="perfilFoto">
-            <p>Pago Seguro y Transparente</p>
-            <p>Sabrás exactamente cuánto pagarás antes de confirmar el servicio.</p>
+        <div class="row pb-5">
+            <div class="col-4 text-center">
+                <img src="/assets/home/escudo.jpg" alt="escudo" class="imgFeatures mb-4">
+                <h3 class="subTitle3">Profesionales Verificados</h3>
+                <p class="subTextHome3">Cada plomero, electricista, jardinero o especialista en limpieza han demostrado
+                    sus experiencia y habilidades.</p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="/assets/home/dollar.png" alt="escudo" class="imgFeatures mb-4">
+                <h3 class="subTitle3">Pago Seguro y Transparente</h3>
+                <p class="subTextHome3">Sabrás exactamente cuánto pagarás antes de confirmar el servicio.</p>
+            </div>
+            <div class="col-4 text-center">
+                <img src="/assets/home/escudo.jpg" alt="escudo" class="imgFeatures mb-4">
+                <h3 class="subTitle3">Búsqueda fácil</h3>
+                <p class="subTextHome3">Podrás buscar y pedir el servicio fácil y rápido desde la comodidad de tu casa.
+                </p>
+            </div>
         </div>
-        <div>
-            <img src="" alt="perfilFoto">
-            <p>Atención Personalizada</p>
-            <p>Nuestro equipo de soporte está disponible para responder tus preguntas y resolver cualquier problema.</p>
+        <div class="pt-5 pb-5">
+            <h2 class="subTitle pb-5">¿Cómo funciona?</h2>
+            <p class="subTextHome3">Usar Domi es tan fácil como tomar tu teléfono y seguir estos pequeños pasos, </p>
         </div>
-        <div>
-            <img src="" alt="">
-            <p> Nuestros expertos no solo son confiables, sino también apasionados por lo que hacen. La comodidad es solo el comienzo; la verdadera magia está en la sensación de seguridad y apoyo que experimentarás en cada servicio.</p>
+        <div class="row pb-5">
+            <div class="row containerPink col-2 text-center offset-md-1">
+                <div class="numberPink mt-4 d-flex align-items-center mb-3">1</div>
+                <p class="parrafoText">Selecciona al profesional que mejor se adapte a tus necesidades y preferencias.</p>
+            </div>
+            <div class="containerPink col-2 text-center offset-md-2">
+                <div class="numberPink mt-4 d-flex align-items-center mb-3">2</div>
+                <p class="parrafoText">Busca el servicio que necesitas y descubre perfiles de profesionales cercanos a ti.</p>
+            </div>
+            <div class="containerPink col-2 text-center offset-md-2">
+                <div class="numberPink mt-4 d-flex align-items-center mb-4">3</div>
+                <p class="parrafoText">Escoge la fecha y hora según tu disponibilidad y solicita el servicio.</p>
+            </div>
         </div>
-        <div>
-            <h2>¿Cómo funciona?</h2>
+        <div class="row pt-5">
+            <div class="col-3">
+            <img class="imgHome" src="assets/home/Ad.png" alt="ad">
         </div>
-        <div>
-            <img src="" alt="">
-            <p>Sabrás exactamente cuánto pagarás antes de confirmar el servicio.</p>
-        </div>
-        <div>
-            <img src="" alt="">
-            <p>Sabrás exactamente cuánto pagarás antes de confirmar el servicio.</p>
-        </div>
-        <div>
-            <img src="" alt="">
-            <p>Sabrás exactamente cuánto pagarás antes de confirmar el servicio.</p>
+            <div class="col-9 AdText d-flex align-items-center px-5">Cuando envías una solicitud de servicio al profesional, él recibe una notificación inmediata. Mientras esperas su respuesta, relájate y confía en que estamos trabajando para conectarlo contigo.</div>
         </div>
     </div>
-    <footer>
-        <app-footer></app-footer>
-    </footer>
-</body>
+</div>
+<footer>
+    <app-footer></app-footer>
+</footer>
 <router-outlet></router-outlet>

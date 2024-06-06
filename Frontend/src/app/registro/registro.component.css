@@ -1,0 +1,12 @@
+#mainDiv{
+    font-family: "Urbanist", sans-serif;
+}
+
+h1{
+  color: var(--Color-secundario, #390084);
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 48px;
+  letter-spacing: 1px;
+}

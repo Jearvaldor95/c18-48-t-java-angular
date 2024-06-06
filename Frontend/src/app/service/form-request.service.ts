@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FormRequestService {
+export class APIrestService {
 
   private endpoint = "https://my-json-server.typicode.com/typicode/demo/comments";
 
 
-  
+
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +19,8 @@ export class FormRequestService {
   }
 
   // public postData(): Observable<any> {
-  // return this.http.post<any>(this.endpoint).subscribe(config => {
-  //   console.log('Updated config:', config);
-  // });}
-
+  //   http.post<Config>('/api/config', newConfig).subscribe(config => {
+  //     console.log('Updated config:', config);
+  //   });
+  // }
 }

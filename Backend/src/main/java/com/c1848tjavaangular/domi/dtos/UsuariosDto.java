@@ -16,6 +16,7 @@ public class UsuariosDto {
     private String email;
     private String telefono;
     private String foto;
+    private String sobreMi;
     private LocalDate fecha_nacimiento;
     private String direccion;
     private Boolean isProfesional;

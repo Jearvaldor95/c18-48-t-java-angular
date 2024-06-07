@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.c1848tjavaangular.domi.dtos.ServicioProfesionDto;
 import com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto;
-import com.c1848tjavaangular.domi.models.entities.ServicioProfesion;
+
 
 public interface ServicioProfesionService {
     // Todos los usuarios profesionales con sus servicios

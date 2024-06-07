@@ -8,6 +8,8 @@ import com.c1848tjavaangular.domi.exceptions.AppNotFoundException;
 import com.c1848tjavaangular.domi.mappers.ServicioProfesionMapper;
 import com.c1848tjavaangular.domi.models.entities.Usuarios;
 import com.c1848tjavaangular.domi.repository.UsuariosRepository;
+
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.c1848tjavaangular.domi.dtos.ServicioProfesionDto;
@@ -49,8 +51,8 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
     }
 
     @Override
-    public List<ServiciosUsuarioDto> findByServiciosNombre(String nombre) {
-        return servicioProfesionRepository.findByServiciosNombre(nombre);
+    public List<ServiciosUsuarioDto> findByServiciosNombre(String nombreServicio) {
+        return servicioProfesionRepository.findByServiciosNombre(nombreServicio);
     }
 
     @Override

@@ -76,4 +76,14 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
     public boolean existsById(Integer id) {
         return false;
     }
+
+    @Override
+    public String getEmailUsuario(Integer idServicioP) {
+        return servicioProfesionRepository.emailByIdServicioProfesional(idServicioP);
+    }
+
+    @Override
+    public String getUsername(Integer idServicioP) {
+        return servicioProfesionRepository.usernameByIdServicioProfesional(idServicioP);
+    }
 }

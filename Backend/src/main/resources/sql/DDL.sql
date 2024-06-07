@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS usuarios (
     password VARCHAR(50) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
     foto VARCHAR(255),
+    sobre_mi VARCHAR(255),
     email VARCHAR(50) NOT NULL UNIQUE,
-    direccion VARCHAR(50),
+    direccion VARCHAR(100),
     fecha_nacimiento DATE,
     isProfesional BOOLEAN NOT NULL DEFAULT 0
 );
@@ -42,5 +43,15 @@ CREATE TABLE IF NOT EXISTS solicitudes (
     resena VARCHAR(255),
     estrellas INT,
     FOREIGN KEY (idservicio_profesion) REFERENCES servicio_profesion(idservicio_profesion) ON DELETE CASCADE,
+    FOREIGN KEY (idusuario) REFERENCES usuarios(idusuario) ON DELETE CASCADE
+);
+
+-- Create 'recuperar_password' table
+CREATE TABLE IF NOT EXISTS recuperar_password (
+    id BIGINT(20) AUTO_INCREMENT PRIMARY KEY,
+    fecha_creacion DATETIME(6),
+    fecha_expiracion DATETIME(6),
+    token VARCHAR(255),
+    idusuario INT,
     FOREIGN KEY (idusuario) REFERENCES usuarios(idusuario) ON DELETE CASCADE
 );

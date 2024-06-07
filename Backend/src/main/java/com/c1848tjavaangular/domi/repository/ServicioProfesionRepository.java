@@ -39,4 +39,19 @@ public interface ServicioProfesionRepository extends JpaRepository<ServicioProfe
             "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
             "JOIN Servicios s ON sp.servicio.id = s.id  WHERE u.direccion =:direccionUsuario")
     List<ServiciosUsuarioDto> findByUsuariosDireccion(String direccionUsuario);
+
+    // Obtener el email del usuario profesional por el idservicio_profesion
+    @Query(value = "SELECT  us.email\n" +
+            "FROM servicio_profesion sp \n" +
+            "JOIN usuarios us ON sp.idusuario = us.idusuario\n" +
+            "WHERE sp.idservicio_profesion =:idServicioP", nativeQuery = true)
+    String emailByIdServicioProfesional(Integer idServicioP);
+
+    // Obtener el username del usuario profesional por el idservicio_profesion
+    @Query(value = "SELECT  us.username\n" +
+            "FROM servicio_profesion sp \n" +
+            "JOIN usuarios us ON sp.idusuario = us.idusuario\n" +
+            "WHERE sp.idservicio_profesion =:idServicioP", nativeQuery = true)
+    String usernameByIdServicioProfesional(Integer idServicioP);
+
 }

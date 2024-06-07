@@ -1,6 +1,7 @@
 package com.c1848tjavaangular.domi.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.c1848tjavaangular.domi.models.entities.Usuarios;
@@ -15,5 +16,8 @@ public interface UsuariosRepository extends JpaRepository<Usuarios,Integer> {
     Boolean existsByUsername(String username);
 
     Boolean existsByEmail(String email);
+
+    @Query("SELECT u.telefono FROM Usuarios u WHERE u.idUsuarios = :idUsuario")
+    String findTelefonoByIdUsuarios(Integer idUsuario);
     
 }

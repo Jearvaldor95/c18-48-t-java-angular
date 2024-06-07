@@ -14,4 +14,6 @@ public interface UsuariosService {
 
     public UsuariosDto upload(Integer id,UsuariosDto usuariosDto);
 
+    public String getTelefono(Integer idUsuario);
+
 }

@@ -26,4 +26,8 @@ public interface ServicioProfesionService {
     ServicioProfesionDto delete(Integer id);
 
     boolean existsById(Integer id);
+
+    String getEmailUsuario(Integer idServicioP);
+
+    String getUsername(Integer idServicioP);
 }

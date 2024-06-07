@@ -73,4 +73,9 @@ public class UsuariosServiceImpl implements UsuariosService {
         usuariosMapper.updateUsuario(usuario,usuariosDto);
         return usuariosMapper.toUsuariosDto(usuariosRepository.save(usuario));
     }
+
+    @Override
+    public String getTelefono(Integer idUsuario) {
+        return usuariosRepository.findTelefonoByIdUsuarios(idUsuario);
+    }
 }

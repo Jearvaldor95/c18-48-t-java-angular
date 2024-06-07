@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS usuarios (
     password VARCHAR(50) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
     foto VARCHAR(255),
+    sobre_mi VARCHAR(255),
     email VARCHAR(50) NOT NULL UNIQUE,
-    direccion VARCHAR(50),
+    direccion VARCHAR(100),
     fecha_nacimiento DATE,
     isProfesional BOOLEAN NOT NULL DEFAULT 0
 );

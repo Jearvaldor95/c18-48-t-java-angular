@@ -1,24 +1,55 @@
-footer{
-    background: #f7f9faff;
+.eslogan {
+    color: #4D4D4D;
+    font-family: Urbanist, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
 }
 
-.footerLink{
-    color: black;
+.siguenos {
+    color: #4D4D4D;
+    font-family: Urbanist, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
 }
 
-.footerLink:hover{
+h1 {
+    color: #79747E;
+    font-family: Urbanist, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 10px;
+}
+
+.footerText {
+    color: #4D4D4D;
+    font-family: Urbanist, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+}
+
+.footerText:hover {
     text-decoration: underline;
 }
 
-.socialMedia{
+.socialMedia {
     color: black;
 }
 
-.socialMedia:hover{
+.socialMedia:hover {
     color: grey;
 }
 
-.socialMedia:active{
+.socialMedia:active {
     color: #e6edf2ff;
     transition: 0.2s;
 }

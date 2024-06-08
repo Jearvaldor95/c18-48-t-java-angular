@@ -5,18 +5,19 @@ import { APIrestService } from '../service/form-request.service';
 // pages components
 import { NavBarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-professionals',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBarComponent, FooterComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBarComponent, FooterComponent, CardComponent, ],
   templateUrl: './professionals.component.html',
   styleUrl: './professionals.component.css'
 })
 export class ProfessionalsComponent {
 
   ngOnInit(): void {
-
+    this.storeData();
   }
 
   data: any[] = [];

@@ -9,9 +9,6 @@ export class APIrestService {
 
   private endpoint = "https://my-json-server.typicode.com/typicode/demo/comments";
 
-
-
-
   constructor(private http: HttpClient) { }
 
   public getData(): Observable<any> {

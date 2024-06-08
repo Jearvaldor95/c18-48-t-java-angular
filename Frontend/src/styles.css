@@ -1,3 +1,7 @@
+body {
+    margin: 0px 162px 0px 162px !important;
+}
+
 .googleSign {
     height: 94px;
     width: 329px;
@@ -18,11 +22,26 @@
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
-.botones{
+.botones {
     height: 57px;
-    padding: 0px 25px 0px;
+    padding: 0px;
+    margin: 0px;
     color: #ffffff;
+    border: 0px;
     border-radius: 5px;
     background-color: #A851FF;
+    border-radius: 5px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-family: Urbanist, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+.noStyles {
+    padding: 0 !important;
+    margin: 0 !important;
 }

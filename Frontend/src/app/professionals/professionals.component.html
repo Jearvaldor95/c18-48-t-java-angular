@@ -1,20 +1,22 @@
 <app-navbar></app-navbar>
-<div>
-    <form action="" class="row justify-content-center">
-    <div class="filtro">
-        
-    </div>
-    <div class="filtro"></div>
-    <div class="filtro"></div>
-</form>
+<div class="mb-4">
+    <form action="" class="row">
+        <div class="col-4 filtro1DIV noStyle">
+            <input class="filtro1 noStyle" type="text" placeholder="Ubicación">
+        </div>
+        <div class="col-4 filtro2DIV noStyle">
+            <input class="filtro2 noStyle" type="text" placeholder="Categoria">
+        </div>
+        <div class="col-4 filtro3DIV noStyle">
+            <input class="filtro3 noStyle" type="text" placeholder="Subcategoria">
+        </div>
+    </form>
 </div>
-    <div>
-        <p>filtros</p>
-    </div>
-    <div class="servicios">
-        <a routerLink="/profile">
-            <img src="assets/professionals/temp.png" (click)="storeData();" alt="">
-        </a>
-    </div>
+<div class="ps-5 pb-5 masFiltros">
+    <p>filtros</p>
+</div>
+<div class="row pt-5 px-0 mx-0 my-0 d-flex">
+    <app-card class="col-3"></app-card>
+</div>
 <app-footer></app-footer>
 <router-outlet></router-outlet>

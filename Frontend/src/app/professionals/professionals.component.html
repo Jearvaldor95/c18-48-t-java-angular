@@ -12,11 +12,13 @@
         </div>
     </form>
 </div>
-<div class="ps-5 pb-5 masFiltros">
+<div class="ps-5 pb-3 masFiltros">
     <p>filtros</p>
 </div>
 <div class="row pt-5 px-0 mx-0 my-0 d-flex">
-    <app-card class="col-3"></app-card>
+    <div *ngFor="let item of data" class="col-3 mb-4">
+        <app-card [data]="item"></app-card>
+    </div>
 </div>
 <app-footer></app-footer>
 <router-outlet></router-outlet>

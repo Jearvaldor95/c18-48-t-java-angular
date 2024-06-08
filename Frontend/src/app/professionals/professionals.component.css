@@ -12,6 +12,8 @@
 
 .filtro1::placeholder{
     padding: 48px;
+    color: #390084;
+    font-family: Urbanist, sans-serif;
 }
 
 .filtro2DIV{
@@ -28,6 +30,8 @@
 
 .filtro2::placeholder{
     padding: 48px;
+    color: #390084;
+    font-family: Urbanist, sans-serif;
 }
 
 .filtro3DIV{
@@ -44,6 +48,8 @@
 
 .filtro3::placeholder{
     padding: 48px;
+    color: #390084;
+    font-family: Urbanist, sans-serif;
 }
 
 .masFiltros{

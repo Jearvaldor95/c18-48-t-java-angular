@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class APIrestService {
 
-  private endpoint = "https://my-json-server.typicode.com/typicode/demo/comments";
+  private endpoint = "https://jsonplaceholder.typicode.com/users";
 
   constructor(private http: HttpClient) { }
 
   public getData(): Observable<any> {
-    return this.http.get<any>(this.endpoint);
+    return this.http.get<any>(this.endpoint); 
   }
 
   // public postData(): Observable<any> {

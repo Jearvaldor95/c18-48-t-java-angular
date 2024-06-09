@@ -1,4 +1,175 @@
-#banner{
-    width: 100%;
+/* .banner {
+    width: 583px;
     height: 600px;
+} */
+
+#titleHome {
+    color: var(--Color-secundario, #390084);
+    font-family: "Urbanist", sans-serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 1px;
+}
+
+.containerRight {
+    padding-left: 150px;
+    padding-right: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#subTextHome {
+    color: #4D4D4D;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+}
+
+#saberMas {
+    background-color: #A851FF;
+    width: 146px;
+    height: 57px;
+    color: #FFF;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    border-radius: 10px;
+}
+
+.frame2 {
+    padding-left: 256px;
+    padding-right: 256px;
+}
+
+.contadores {
+    color: var(--Color-secundario, #390084);
+    font-family: Urbanist;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.contadoresText {
+    color: #4D4D4D;
+    font-family: Urbanist;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.subTitle {
+    color: var(--Color-secundario, #390084);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.subTextHome2 {
+    color: #4D4D4D;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+}
+
+.subTextHome3 {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+}
+
+.subTitle3 {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+}
+
+.imgFeatures {
+    width: 50px;
+}
+
+.containerPink {
+    height: 315px;
+    border-radius: 50px;
+    border: 5px solid var(--Color-terciario, #C496FF);
+    background: var(--Color-principal, #FFF);
+}
+
+.numberPink {
+    color: #FFF;
+    text-align: center;
+    font-family: "IBM Plex Mono";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    /* 62.5% */
+    letter-spacing: 0.1px;
+    width: 100px;
+    height: 100px;
+    border: 10px solid #eee0ffff;
+    border-radius: 100%;
+    fill: var(--Botones, #A851FF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    background-color: #a852ffff;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+.parrafoText {
+    color: var(--Color-secundario, #390084);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+}
+
+.imgHome{
+    width: 300px;
+}
+
+.AdText {
+    color: var(--texto-claro, #4D4D4D);
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.3px;
 }

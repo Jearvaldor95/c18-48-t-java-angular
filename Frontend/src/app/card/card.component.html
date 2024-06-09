@@ -1,0 +1,51 @@
+<div class="card col-2 noStyles">
+    <div class="banner noStyles">
+        <img class="banner" src="assets/temp/banner.svg" alt="banner">
+    </div>
+    <div class="profilePhotoDIV">
+        <img class="profilePhoto" src="assets/temp/profile.svg" alt="profile">
+    </div>
+    <div class="cardInfo">
+        <div class="row mx-0 ps-3 pe-0">
+            <div class="row noStyles">
+                <div class="col-6 noStyles d-flex">
+                    <h1 class="name d-flex noStyles">{{ data?.name }}</h1>
+                </div>
+                <div class="col-iconos noStyles d-flex">
+                    <img src="assets/card/check.svg" alt="verification">
+                </div>
+            </div>
+            <div class="row noStyles">
+                <div class="estrellas col-3">
+                    <p class="noStyles">⋆⋆⋆⋆⋆</p>
+                </div>
+                <div class="scoreDIV col-1">
+                    <p class="scoreData noStyles">4.5</p>
+                </div>
+                <div class="conteoReseñas col-4">
+                    <p class="conteoReseñasData noStyles">(126)</p>
+                </div>
+            </div>
+            <div class="row informacionPersonalDIV1">
+                <div class="col-iconos noStyles">
+                    <img class="iconos" src="assets/card/maletin.svg" alt="icono">
+                </div>
+                <div class="col-10 noStyles">
+                    <p class="informacionPersonal">{{ data.username }}</p>
+                </div>
+            </div>
+            <div class="row informacionPersonalDIV2">
+                <div class="col-iconos noStyles">
+                    <img class="iconos noStyles" src="assets/card/ubicacion.svg" alt="icono">
+                </div>
+                <div class="col-10 noStyles">
+                    <p class="informacionPersonal">{{ data.email }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="noStyles">
+        <button routerLink="/profile" class="verPerfilButton">Ver perfil</button>
+    </div>
+</div>
+<router-outlet></router-outlet>

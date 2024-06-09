@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div id="containerLeft" class="container col-4 px-5">
+        <h1>¡Hola de nuevo!</h1>
+        <p>Estamos felices de tenerte de vuelta</p>
+        <button class="form-control googleSign" routerLink="/sdfdsf"><img
+            class="me-2" src="assets/img/google.png" alt="Google" width="30px">Iniciar sesión con Google</button>
+        <div class="d-flex text-center py-3">
+            <hr class="hrStyle col-4 d-flex align-items-center">
+            <p class="col-2">o inicia sesión con</p>
+            <hr class="hrStyle col-4  align-items-center">
+        </div>
+        <form class="row">
+            <div>
+                <label for="">Nombre de usuario</label>
+            </div>
+            <div>
+                <input class="form-control" type="text">
+            </div>
+            <div>
+                <label for="">Contraseña</label>
+            </div>
+            <div>
+                <input class="form-control" type="text">
+            </div>
+            <div class="ms-auto">
+                <p>Olvidaste tu contraseña?</p>
+            </div>
+            <div>
+                <button class="botones form-control">Iniciar sesión</button>
+            </div>
+        </form>
+    </div>
+    <div id="containerRight" class="col-6">
+        <div>
+            <img src="/assets/login/banner.jpg" alt="bannerLogin">
+        </div>
+        <div class="row text-center justify-content-center">
+            <div class="col-2">
+                <p>No tienes cuenta?</p>
+            </div>
+            <div class="col-2">
+                <a routerLink="/registro" routerLinkActive="router-link-active">Crear cuenta</a>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

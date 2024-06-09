@@ -40,6 +40,13 @@ public interface ServicioProfesionRepository extends JpaRepository<ServicioProfe
             "JOIN Servicios s ON sp.servicio.id = s.id  WHERE u.direccion LIKE %:direccionUsuario%")
     List<ServiciosUsuarioDto> findByUsuariosDireccion(String direccionUsuario);
 
+    // Usuario profesional con sus servicio por idServicio
+    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.telefono, u.email, u.direccion, s.nombre) \n" +
+            "FROM Usuarios u \n" +
+            "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
+            "JOIN Servicios s ON sp.servicio.id = s.id WHERE sp.id =:idServicioP")
+    ServiciosUsuarioDto findServicioUsuarioById(Integer idServicioP);
+
     // Obtener el email del usuario profesional por el idservicio_profesion
     @Query(value = "SELECT  us.email\n" +
             "FROM servicio_profesion sp \n" +

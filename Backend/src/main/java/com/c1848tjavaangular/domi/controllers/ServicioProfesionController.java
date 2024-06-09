@@ -26,6 +26,11 @@ public class ServicioProfesionController {
     public ResponseEntity<?> getServiciosAndUsuarios(){
         return ResponseEntity.ok(servicioProfesionService.findAllServiciosAndUsuarios());
     }
+
+    @GetMapping("/servicio-profesion/{id}")
+    public ResponseEntity<ServiciosUsuarioDto> getServicioId(@PathVariable Integer id){
+        return ResponseEntity.ok(servicioProfesionService.getServicioUsuarioById(id));
+    }
     
     @GetMapping("/servicio-profesion/nombre")
     public ResponseEntity<?> getProfesional(@RequestParam String nombreServicio){

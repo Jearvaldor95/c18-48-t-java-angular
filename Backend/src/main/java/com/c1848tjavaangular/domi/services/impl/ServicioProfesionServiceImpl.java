@@ -66,6 +66,11 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
     }
 
     @Override
+    public ServiciosUsuarioDto getServicioUsuarioById(Integer id) {
+        return servicioProfesionRepository.findServicioUsuarioById(id);
+    }
+
+    @Override
     public ServicioProfesionDto delete(Integer id) {
         ServicioProfesion servicioProfesion = servicioProfesionRepository.findById(id)
                 .orElseThrow(()-> new AppNotFoundException("Servicio not found!"));

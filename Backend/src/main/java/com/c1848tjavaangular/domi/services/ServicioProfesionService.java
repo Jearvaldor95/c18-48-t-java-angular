@@ -23,6 +23,8 @@ public interface ServicioProfesionService {
     // Usuarios profesionales con sus servicios por direccion
     List<ServiciosUsuarioDto> findByUsuariosDireccion(String direccion);
 
+    ServiciosUsuarioDto getServicioUsuarioById(Integer id);
+
     ServicioProfesionDto delete(Integer id);
 
     String getEmailUsuario(Integer idServicioP);

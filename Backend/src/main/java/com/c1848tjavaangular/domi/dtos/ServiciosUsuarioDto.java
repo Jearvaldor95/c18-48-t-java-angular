@@ -13,6 +13,8 @@ public class ServiciosUsuarioDto {
     private Integer idServicioProfesion;
     private String nombreUsuario;
     private String apellidosUsuario;
+    private String sobreMi;
+    private String foto;
     private String telefonoUsuario;
     private String emailUsuario;
     private String direccionUsuario;

@@ -36,5 +36,10 @@ public class ServiciosServiceImpl implements ServiciosService{
         
         return serviciosMapper.toServiciosDto(servicios);
     }
-    
+
+    @Override
+    public List<ServiciosDto> getServiciosByNombre(String nombre) {
+        return serviciosMapper.toServiciosDtos(serviciosRepository.findByNombre(nombre));
+    }
+
 }

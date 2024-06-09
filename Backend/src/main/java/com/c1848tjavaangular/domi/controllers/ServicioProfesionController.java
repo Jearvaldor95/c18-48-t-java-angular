@@ -21,16 +21,35 @@ public class ServicioProfesionController {
         this.servicioProfesionService = servicioProfesionService;
         this.jwtService = jwtService;
     }
+
+    @GetMapping("/servicio-profesion")
+    public ResponseEntity<?> getServiciosAndUsuarios(){
+        return ResponseEntity.ok(servicioProfesionService.findAllServiciosAndUsuarios());
+    }
     
-    @GetMapping("/servicio/nombreServicio")
-    public ResponseEntity<?> getProfesional(@PathVariable String nombreServicio){
+    @GetMapping("/servicio-profesion/nombre")
+    public ResponseEntity<?> getProfesional(@RequestParam String nombreServicio){
        return ResponseEntity.ok(servicioProfesionService.findByServiciosNombre(nombreServicio));
     }
 
-
-    @PostMapping("/servicio")
+    @PostMapping("/servicio-profesion")
     public ResponseEntity<ServicioProfesionDto> save(@RequestHeader("token") String token, @RequestBody ServicioProfesionDto servicioProfesionDto){
         Integer idUsuario = jwtService.getIdUsuarioFromToken(token);
         return new ResponseEntity<>(servicioProfesionService.save(idUsuario, servicioProfesionDto), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/servicio-profesion/nombre-direccion")
+    public ResponseEntity<?> getServiciosNombreAndUsuariosDireccion(@RequestParam String nombreServicio, @RequestParam String direccion){
+        return ResponseEntity.ok(servicioProfesionService.findByServiciosNombreAndUsuariosDireccion(nombreServicio, direccion));
+    }
+
+    @GetMapping("/servicio-profesion/direccion")
+    public ResponseEntity<?> getUsuariosDireccion(@RequestParam String direccion){
+        return ResponseEntity.ok(servicioProfesionService.findByUsuariosDireccion(direccion));
+    }
+
+    @DeleteMapping("/servicio-profesion/{id}")
+    public ResponseEntity<ServicioProfesionDto> delete(@PathVariable Integer id){
+        return ResponseEntity.ok(servicioProfesionService.delete(id));
     }
 }

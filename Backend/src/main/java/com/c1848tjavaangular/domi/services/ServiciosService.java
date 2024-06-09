@@ -12,7 +12,5 @@ public interface ServiciosService {
 
     public ServiciosDto findById(Integer id);
 
-    //void delete(Servicios servicios);
-
-    //boolean existsById(Integer id);
+    public List<ServiciosDto> getServiciosByNombre(String nombre);
 }

@@ -101,7 +101,7 @@ public class SolicitudesServiceImpl implements SolicitudesService {
 
     @Override
     public List<SolicitudesProfesionalDto> findSolicitudesTerminadasByUserId(Integer idUsuario) {
-        return solicitudesRepository.findSolicitudesPendientesByUserId(idUsuario);
+        return solicitudesRepository.findSolicitudesTerminadasByUserId(idUsuario);
     }
 
     @Override
@@ -109,9 +109,4 @@ public class SolicitudesServiceImpl implements SolicitudesService {
         return solicitudesRepository.findSolicitudesPendientesByUserId(idUsuario);
     }
 
-    @Override
-    public boolean existsById(Integer id) {
-        
-        return solicitudesRepository.existsById(id);
-    }
 }

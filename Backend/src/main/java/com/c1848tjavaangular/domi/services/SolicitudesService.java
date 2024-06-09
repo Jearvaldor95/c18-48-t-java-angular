@@ -37,6 +37,4 @@ public interface SolicitudesService {
 
     // Todas las solicitudes que ha hecho un usuario y estan sin realizar
     List<SolicitudesProfesionalDto> findSolicitudesPendientesByUserId(Integer idUsuario);
-
-    boolean existsById(Integer id);
 }

@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -48,6 +49,7 @@ public class Usuarios implements Serializable {
     private String sobreMi;
     @Column(nullable = false, unique = true)
     @NotNull
+    @Email
     private String email;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate fecha_nacimiento;

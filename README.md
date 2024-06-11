@@ -3,6 +3,7 @@
 Una plataforma estilo marketplace para unir profesionales con clientes. Clientes buscan profesionales que esten registrados, seleccionan uno o varios utilizando los filtros y viendo la experiencia y puntuacion de los mismos. Los profesionales tienen un perfil donde describen todo lo que hacen por medio de testimonios, certificaciones, imágenes, precio y puntuacion. El cliente elije un profesional se abre un canal de comunicacion donde coordinan el encuentro. Cuando se completa el servicio el cliente y el profesional tienen la posibilidad de puntuarse mutuamente.
 ## Colaboradores
 
+### UX/UI
 - [Anadela Hernández](https://github.com/anadelahl)<div align="left"><div><a href="www.linkedin.com/in/anadelahernandez/" target="_blank">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo" />
 </a><a href="https://www.behance.net/anadelahernndez2" target="_blank">
@@ -10,7 +11,7 @@ Una plataforma estilo marketplace para unir profesionales con clientes. Clientes
 </a>
 </div>
 
-
+### BackEnd
 - [Jesús Armando Valeta Doria](https://github.com/jearvaldor95)<div align="left"><a href="https://www.linkedin.com/in/jvaletadoria1095/" target="_blank">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo" />
 </a>
@@ -22,12 +23,13 @@ Una plataforma estilo marketplace para unir profesionales con clientes. Clientes
 </a>
 
 ###
-
+### FrontEnd
 - [Jordan Covilla](https://github.com/JordanCovilla)<div align="left">
   <a href="https://www.linkedin.com/in/jordan-covilla/" target="_blank">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo" />
 </a>
 
+### QA
 - [Edgar Alejandro Quintero Vivas](https://github.com/Eaqv)<div align="left"> <a href="https://www.linkedin.com/in/edgarquinterovivas/" target="_blank">
   <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo" />
 </a>

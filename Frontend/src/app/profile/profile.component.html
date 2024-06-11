@@ -1,25 +1,101 @@
-<div>
-    <div class="">
-        <img class="profileImage" src="assets/profile/profileBanner.png" alt="profile banner">
-    </div>
-    <div class="ms-5 ps-5 py-5">
-        <div class="">
-            <h1>Juan Perez</h1>
-            <div class="row d-flex">
-                <p class="col-1">Electricista</p><span class="col-3">Barranquilla, Atlántico, Colombia</span>
-            </div>
-            <h2>Sobre mí</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit interdum, nisi habitant magnis lacinia litora
-                auctor
-                vel senectus, class fames eu vestibulum iaculis a nostra. Tellus taciti sed mi tempor vestibulum aptent
-                semper proin non eget torquent, auctor himenaeos ut sollicitudin montes ullamcorper accumsan imperdiet
-                sapien. Urna dis nibh volutpat fusce pulvinar gravida in neque, sociosqu habitasse blandit aptent
-                suscipit
-                iaculis ridiculus nascetur etiam, porta nec nullam condimentum ad scelerisque pretium.</p>
+<div class="profile noStyles">
+    <div class="portada">
+        <div class="banner">
+            <img class="banner" src="assets/temp/temp.svg" alt="profile banner">
         </div>
-        <div class="row d-flex">
-            <div class="col-2"><button class="botones">Adquirir servicios</button></div>
-            <div class="col-1"><button class="botones">Recomendar</button></div>
+        <div class="profilePhotoDIV">
+            <img class="profilePhoto" src="/assets/temp/fotoPerfil.svg" alt="Foto de Perfil">
+        </div>
+    </div>
+    <div class="mb-5">
+        <div class="profileInfo mb-5">
+            <div class="row noStyles mb-5 row align-content-center">
+                <div class="col-3 noStyles">
+                    <h1>Maria Ferrer</h1>
+                </div>
+                <div class="col-1 noStyles">
+                    <p>*****</p>
+                </div>
+                <div class="col-1 noStyles">
+                    <p>4.5</p>
+                </div>
+                <div class="col-1 noStyles">
+                    <p>(35)</p>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="row mb-4">
+                    <div class="col-1 noStyles">
+                        <img class="iconos" src="assets/profile/maletin.svg" alt="maletin">
+                    </div>
+                    <div class="col-11 noStyles">
+                        <p class="servicioPerfil">Manicurista</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="noStyles col-1">
+                        <img class="iconos" src="assets/profile/marcador.svg" alt="marcador">
+                    </div>
+                    <div class="noStyles col-11">
+                        <p class="servicioPerfil">Barranquilla, Atlántico, Colombia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5 pb-5">
+                <div class="col-2 noStyles">
+                    <button class="botones btnAdquirir">Adquirir servicio</button>
+                </div>
+                <div class="col-2 noStyles">
+                    <button class="botones btnContactar bordeRosa">Contactar</button>
+                </div>
+            </div>
+            <div class="noStyles">
+                <div>
+                    <h2>Sobre mí</h2>
+                </div>
+                <div class="mb-5">
+                    <p class="profileResume">¡Hola! Soy María, tengo 27 años y soy una manicurista y maquilladora
+                        profesional. Mi pasión es
+                        realzar la belleza y la confianza de mis clientes a través de mi arte. Me dedico a proporcionar
+                        un servicio personalizado y meticuloso, asegurándome de que cada detalle refleje la personalidad
+                        única de quien confía en mi trabajo.</p>
+                </div>
+            </div>
+            <div class="row pt-5 mb-5 containerResumen text-center">
+                <div class="bordeRosa col-4 row align-content-center">
+                    <div>
+                        <p>45</p>
+                    </div>
+                    <div>
+                        <p>Trabajos realizados</p>
+                    </div>
+                </div>
+                <div class="bordeRosa col-4 row align-content-center">
+                    <div>
+                        <p>35</p>
+                    </div>
+                    <div>
+                        <p>Reseñas</p>
+                    </div>
+                </div>
+                <div class="bordeRosa col-4 row align-content-center">
+                    <div>
+                        <p>30</p>
+                    </div>
+                    <div>
+                        <p>Recomendaciones</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-5">
+                <div class="pt-5 pb-5">
+                    <p class="titleDark">Servicios ofrecidos</p>
+                </div>
+                <div class="row" *ngFor="let item of data">
+                    <div class="services noStyles"><app-profile-services></app-profile-services></div>
+                    <div class="services noStyles"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

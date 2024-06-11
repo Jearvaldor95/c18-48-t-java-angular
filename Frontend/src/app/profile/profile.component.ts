@@ -5,11 +5,12 @@ import { APIrestService } from '../service/form-request.service';
 // pages components
 import { NavBarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ProfileServicesComponent } from '../profile-services/profile-services.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBarComponent, FooterComponent,],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBarComponent, FooterComponent, ProfileServicesComponent, ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

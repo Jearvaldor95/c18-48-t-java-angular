@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="text-center">
+    <div class="mb-5">
+        <img src="assets/forgotPass/candado.svg" alt="candado">
+    </div>
+    <div class="titulo mb-3">
+        <p>¿Olvidaste tu contraseña?</p>
+    </div>
+    <div class="mb-5">
+        <p class="subText">¡No te preocupes! Solo ingresa tu correo electrónico y te enviaremos un código para que hagas
+            una nueva</p>
+    </div>
+    <div>
+        <form>
+            <div class="">
+                <div class="">
+                    <label for="email" class="subText2">Correo electrónico</label>
+                </div>
+                <div class="mb-5">
+                    <input class="emailPassword" type="email">
+                </div>
+            </div>
+            <div class="mb-4">
+                <button class="botones botonEnviar" type="submit">Enviar código</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <a class="regresar" routerLink="/login">Regresar</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

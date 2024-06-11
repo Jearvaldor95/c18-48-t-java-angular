@@ -9,7 +9,9 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AccountComponent } from './account/account.component';
-import { CardComponent } from './card/card.component'
+import { CardComponent } from './card/card.component';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
+import { ProfileServicesComponent } from './profile-services/profile-services.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,6 +24,8 @@ export const routes: Routes = [
     { path: 'profile', component: ProfileComponent },
     { path: 'account', component: AccountComponent },
     { path: 'card', component: CardComponent },
+    { path: 'forgotPass', component: ForgotPassComponent },
+    { path: 'profileServicesCard', component: ProfileServicesComponent },
     // siempre ultimo
     { path: '**', component: PageNotFoundComponent },
 ];

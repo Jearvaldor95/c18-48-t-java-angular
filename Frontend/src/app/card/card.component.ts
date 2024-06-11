@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
+  
   @Input() data: any;
 
   ngOnInit(): void {

@@ -1,8 +1,9 @@
 <div class="profile noStyles">
     <div class="portada">
-        <div class="banner">
+        <div class="bannerDIV">
             <img class="banner" src="assets/temp/temp.svg" alt="profile banner">
         </div>
+        <div class="arrowDIV"><button class="arrowButton" (click)="goBack()"><img class="arrow" src="assets/profile/arrow.svg" alt="arrow"></button></div>
         <div class="profilePhotoDIV">
             <img class="profilePhoto" src="/assets/temp/fotoPerfil.svg" alt="Foto de Perfil">
         </div>
@@ -61,29 +62,29 @@
                         única de quien confía en mi trabajo.</p>
                 </div>
             </div>
-            <div class="row pt-5 mb-5 containerResumen text-center">
-                <div class="bordeRosa col-4 row align-content-center">
-                    <div>
-                        <p>45</p>
+            <div class="row pt-5 mb-5 text-center">
+                <div class="bordeRosa resenaContainer col-4 row align-content-center noStyles">
+                    <div class="noStyles">
+                        <p class="resena">45</p>
                     </div>
-                    <div>
-                        <p>Trabajos realizados</p>
-                    </div>
-                </div>
-                <div class="bordeRosa col-4 row align-content-center">
-                    <div>
-                        <p>35</p>
-                    </div>
-                    <div>
-                        <p>Reseñas</p>
+                    <div class="noStyles">
+                        <p class="resenaName">Trabajos realizados</p>
                     </div>
                 </div>
-                <div class="bordeRosa col-4 row align-content-center">
-                    <div>
-                        <p>30</p>
+                <div class="bordeRosa resenaContainer col-4 row align-content-center noStyles">
+                    <div class="noStyles">
+                        <p class="resena">35</p>
                     </div>
-                    <div>
-                        <p>Recomendaciones</p>
+                    <div class="noStyles">
+                        <p class="resenaName">Reseñas</p>
+                    </div>
+                </div>
+                <div class="bordeRosa resenaContainer col-4 row align-content-center noStyles">
+                    <div class="noStyles">
+                        <p class="resena">30</p>
+                    </div>
+                    <div class="noStyles">
+                        <p class="resenaName">Recomendaciones</p>
                     </div>
                 </div>
             </div>
@@ -91,9 +92,10 @@
                 <div class="pt-5 pb-5">
                     <p class="titleDark">Servicios ofrecidos</p>
                 </div>
-                <div class="row" *ngFor="let item of data">
-                    <div class="services noStyles"><app-profile-services></app-profile-services></div>
-                    <div class="services noStyles"></div>
+                <div class="row">
+                    <div *ngFor="let item of data" class="col-4 px-0 mx-0 my-0 pt-0 pb-5 d-flex justify-content-center">
+                        <app-profile-services [data]="item"></app-profile-services>
+                    </div>
                 </div>
             </div>
         </div>

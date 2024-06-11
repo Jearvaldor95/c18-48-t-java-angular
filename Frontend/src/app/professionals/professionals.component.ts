@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CardComponent } from '../card/card.component';
+import { ServicioProfesionService } from '../service/servicio-profesion.service';
 
 @Component({
   selector: 'app-professionals',
@@ -19,10 +20,11 @@ import { CardComponent } from '../card/card.component';
 export class ProfessionalsComponent {
   data: any[] = [];
 
-  constructor(private APIrestService: APIrestService) { }
+  constructor(private APIrestService: APIrestService, private servicioProfesion: ServicioProfesionService) { }
 
   ngOnInit(): void {
-    this.showData();
+    //this.showData();
+    this.getServiciosProfesional();
   }
 
   showData() {
@@ -30,4 +32,12 @@ export class ProfessionalsComponent {
       this.data = data;
     });
   }
+
+  getServiciosProfesional(){
+    this.servicioProfesion.getServiciosProfesionales().subscribe(data => {
+      this.data = data;
+      console.log(data);
+    });
+  }
+
 }

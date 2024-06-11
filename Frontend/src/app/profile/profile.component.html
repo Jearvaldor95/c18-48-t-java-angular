@@ -5,14 +5,14 @@
         </div>
         <div class="arrowDIV"><button class="arrowButton" (click)="goBack()"><img class="arrow" src="assets/profile/arrow.svg" alt="arrow"></button></div>
         <div class="profilePhotoDIV">
-            <img class="profilePhoto" src="/assets/temp/fotoPerfil.svg" alt="Foto de Perfil">
+            <img class="profilePhoto" src="assets/profile/{{data.foto}}" alt="Foto de Perfil">
         </div>
     </div>
     <div class="mb-5">
         <div class="profileInfo mb-5">
             <div class="row noStyles mb-5 row align-content-center">
                 <div class="col-3 noStyles">
-                    <h1>Maria Ferrer</h1>
+                    <h1>{{data?.nombreUsuario}}</h1>
                 </div>
                 <div class="col-1 noStyles">
                     <p>*****</p>
@@ -30,7 +30,7 @@
                         <img class="iconos" src="assets/profile/maletin.svg" alt="maletin">
                     </div>
                     <div class="col-11 noStyles">
-                        <p class="servicioPerfil">Manicurista</p>
+                        <p class="servicioPerfil">{{data?.nombreServicio}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -38,7 +38,7 @@
                         <img class="iconos" src="assets/profile/marcador.svg" alt="marcador">
                     </div>
                     <div class="noStyles col-11">
-                        <p class="servicioPerfil">Barranquilla, Atlántico, Colombia</p>
+                        <p class="servicioPerfil">{{data?.direccionUsuario}}</p>
                     </div>
                 </div>
             </div>
@@ -55,11 +55,7 @@
                     <h2>Sobre mí</h2>
                 </div>
                 <div class="mb-5">
-                    <p class="profileResume">¡Hola! Soy María, tengo 27 años y soy una manicurista y maquilladora
-                        profesional. Mi pasión es
-                        realzar la belleza y la confianza de mis clientes a través de mi arte. Me dedico a proporcionar
-                        un servicio personalizado y meticuloso, asegurándome de que cada detalle refleje la personalidad
-                        única de quien confía en mi trabajo.</p>
+                    <p class="profileResume">{{data?.sobreMi}}</p>
                 </div>
             </div>
             <div class="row pt-5 mb-5 text-center">
@@ -102,3 +98,13 @@
     </div>
 </div>
 <router-outlet></router-outlet>
+
+<!-- <form action="" [formGroup]="myForm" (ngSubmit)="enviarSolicitud(myForm)">
+    <input type="hidden" formControlName="idServicioProfesion" [value]="data?.idServicioProfesion">
+    <input type="text" formControlName="mensaje" placeholder="Dejame un mensaje">
+
+    <div class="row d-flex">
+        <div class="col-2"><button class="botones">Adquirir servicios</button></div>
+        <div class="col-1"><button class="botones">Recomendar</button></div>
+    </div>
+</form> -->

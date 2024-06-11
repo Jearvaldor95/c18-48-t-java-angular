@@ -10,18 +10,21 @@
             <p class="col-2">o inicia sesión con</p>
             <hr class="hrStyle col-4  align-items-center">
         </div>
-        <form class="row">
-            <div>
-                <label for="">Nombre de usuario</label>
+        <form class="row" [formGroup]="myForm" (ngSubmit)="login(myForm)">
+            <div If="errorMessage">
+                {{ errorMessage }}
             </div>
             <div>
-                <input class="form-control" type="text">
+                <label for="">Email</label>
+            </div>
+            <div>
+                <input class="form-control" formControlName="email" type="text">
             </div>
             <div>
                 <label for="">Contraseña</label>
             </div>
             <div>
-                <input class="form-control" type="text">
+                <input class="form-control" formControlName="password" type="text">
             </div>
             <div class="ms-auto mb-3">
                 <a routerLink="/forgotPass">Olvidaste tu contraseña?</a>

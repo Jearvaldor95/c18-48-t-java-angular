@@ -1,28 +1,73 @@
-body {
-    margin: 0px 130px !important;
+/* fonts */
+
+.f-40 {
+    font-family: Urbanist, sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin: 0px;
+    padding: 0px;
 }
 
-.googleSign {
-    height: 94px;
-    width: 329px;
-    color: black;
+.f-36 {
+    font-family: Urbanist, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 48px;
+    letter-spacing: 1px;
+    margin: 0px;
+    padding: 0px;
 }
 
-.googleSign:hover {
-    color: white;
-    background: #FF8C42;
-    transition: 1s;
+.f-24 {
+    font-family: Urbanist, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+    margin: 0px;
+    padding: 0px;
 }
 
-.botones.form-control {
-    height: 57px;
-    color: #ffffff;
-    border-radius: 5px;
-    background-color: #A851FF;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+.f-20 {
+    font-family: Urbanist, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+    margin: 0px;
+    padding: 0px;
 }
 
-.botones {
+.f-16 {
+    font-family: Urbanist, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.f-purpleDark {
+    color: #3F2071;
+}
+
+.f-purpleNormal {
+    color: #A851FF;
+}
+
+.f-purpleLight {
+    color: #C496FF;
+}
+
+/* Botones */
+
+.botonPurple, .botonPurple.form-control {
     height: 57px;
     padding: 0px;
     margin: 0px;
@@ -30,7 +75,6 @@ body {
     border: 0px;
     border-radius: 5px;
     background-color: #A851FF;
-    border-radius: 5px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
     text-align: center;
     font-family: Urbanist, sans-serif;
@@ -41,14 +85,54 @@ body {
     letter-spacing: 0.1px;
 }
 
-.noStyles {
-    padding: 0 !important;
-    margin: 0 !important;
+.botonWhite, .botonWhite.form-control {
+    height: 57px;
+    padding: 0px;
+    margin: 0px;
+    color: #C496FF;
+    border: 1px solid #C496FF;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Urbanist, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.1px;
 }
 
-.inside {
-    max-width: 100% !important;
+/* inputs */
+
+.formInputs {
+    height: 57px;
 }
+
+.formInputs::placeholder {
+    font-family: Urbanist, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.googleSign {
+    height: 94px;
+    width: 329px;
+    color: black;
+}
+
+.googleSign:hover {
+    color: black;
+    background: #EEE1FF;
+    transition: 1s;
+}
+
+
 
 .profileInfo {
     margin-left: 121px;

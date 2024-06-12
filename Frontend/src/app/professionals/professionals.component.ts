@@ -20,23 +20,19 @@ import { ServicioProfesionService } from '../service/servicio-profesion.service'
 export class ProfessionalsComponent {
   data: any[] = [];
 
-  constructor(private APIrestService: APIrestService, private servicioProfesion: ServicioProfesionService) { }
+  constructor(private servicioProfesion: ServicioProfesionService) { }
 
   ngOnInit(): void {
-    //this.showData();
     this.getServiciosProfesional();
-  }
-
-  showData() {
-    this.APIrestService.getData().subscribe(data => {
-      this.data = data;
-    });
   }
 
   getServiciosProfesional(){
     this.servicioProfesion.getServiciosProfesionales().subscribe(data => {
       this.data = data;
-      console.log(data);
+      console.log(this.data);
+    },
+    error => {
+      console.error('Error al obtener los datos:', error);
     });
   }
 

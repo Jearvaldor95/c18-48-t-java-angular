@@ -1,119 +1,32 @@
-.banner {
-    width: 640px;
-    height: 604px;
+.title {
+    font-weight: 700 !important;
 }
 
-#titleHome {
-    color: var(--Color-secundario, #390084);
-    font-family: "Urbanist", sans-serif;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 48px;
-    letter-spacing: 1px;
-}
-
-.containerRight {
-    padding-left: 150px;
-    padding-right: 100px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-#subTextHome {
-    color: #4D4D4D;
+.titleH2 {
+    color: var(--Color-principal, #FFF);
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Urbanist;
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 40px;
-    letter-spacing: 0.1px;
-}
-
-#saberMas {
-    background-color: #A851FF;
-    width: 146px;
-    height: 57px;
-    color: #FFF;
-    text-align: center;
-    font-family: Urbanist;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0.1px;
-    border-radius: 10px;
-}
-
-.contadores {
-    color: var(--Color-secundario, #390084);
-    font-family: Urbanist;
-    font-size: 36px;
-    font-style: normal;
     font-weight: 900;
-    line-height: 20px;
-    letter-spacing: 0.25px;
-}
-
-.contadoresText {
-    color: #4D4D4D;
-    font-family: Urbanist;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.25px;
-}
-
-.subTitle {
-    color: var(--Color-secundario, #390084);
-    text-align: center;
-    font-family: Urbanist;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
-
-.subTextHome2 {
-    color: #4D4D4D;
-    text-align: center;
-    font-family: Urbanist;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
     line-height: 40px;
     letter-spacing: 0.1px;
 }
 
-.subTextHome3 {
-    color: #000;
+.comoFuncionaText {
+    color: var(--Color-principal, #FFF);
     text-align: center;
-    font-family: Urbanist;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    /* 187.5% */
-    letter-spacing: 0.1px;
-}
-
-.subTitle3 {
-    color: #000;
-    text-align: center;
-    font-family: Urbanist;
+    font-family: Urbanist, sans-serif;
     font-size: 20px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 30px;
-    /* 150% */
     letter-spacing: 0.1px;
 }
 
 .imgFeatures {
-    width: 50px;
+    width: 40px;
 }
 
 .containerPink {
@@ -121,7 +34,9 @@
     width: 249px;
     border-radius: 5px;
     border: 5px solid var(--Color-terciario, #C496FF);
-    background: var(--Color-principal, #FFF);
+    background: #FFF;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .numberPink {
@@ -137,7 +52,6 @@
     height: 100px;
     border: 10px solid #eee0ffff;
     border-radius: 100%;
-    fill: var(--Botones, #A851FF);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
     background-color: #a852ffff;
     justify-content: center;
@@ -145,55 +59,22 @@
     margin: 0 auto;
 }
 
-
-.parrafoText {
-    color: var(--Color-secundario, #390084);
-    text-align: center;
-    font-family: Urbanist;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0.1px;
-}
-
-.imgHome {
+.comoFuncionaImg {
     width: 300px;
 }
 
-.AdText {
-    color: var(--texto-claro, #4D4D4D);
-    font-family: Urbanist;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
-    letter-spacing: 0.3px;
-}
-
 .comoFunciona {
-    background-image: url('/assets/home/homeBG.svg');
+    margin-top: 78px;
+    background-image: url('/assets/home/comoFunciona.svg');
+
 }
 
-.subTitlewhite {
-    color: var(--Color-principal, #FFF);
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Urbanist;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 40px;
-    letter-spacing: 0.1px;
-}
-
-.subTextHome3white {
-    color: var(--Color-principal, #FFF);
-    text-align: center;
-    font-family: Urbanist;
-    font-size: 20px;
+.beneficiosProfesionales {
+    color: #4D4D4D;
+    font-family: Urbanist, sans-serif;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 25px;
     letter-spacing: 0.1px;
 }

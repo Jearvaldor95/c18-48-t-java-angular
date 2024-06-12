@@ -21,7 +21,7 @@ export class CardComponent {
   }
 
   myForm!: FormGroup;
-constructor(private apiRestService: APIrestService,private router: Router, private servicioProfesion: ServicioProfesionService) {}
+constructor(private router: Router, private servicioProfesion: ServicioProfesionService) {}
 
  /* ApiGetData(): void {
     this.apiRestService.getData().subscribe(data => {
@@ -35,12 +35,11 @@ constructor(private apiRestService: APIrestService,private router: Router, priva
   }*/
 
   
-  verProfesional(id: number) {
-    this.servicioProfesion.getServicioProfesionalId(id).subscribe(data => {
-      this.servicioProfesion.setData('perfil', data);
-      this.router.navigate(['/profile']);
-    })
-    
-  }
+  // verProfesional(id: number) {
+  //   this.servicioProfesion.getServicioProfesionalId(id).subscribe(data => {
+  //     this.servicioProfesion.setData('perfil', data);
+  //     this.router.navigate(['/profile']);
+  //   })
+  // }
 
 }

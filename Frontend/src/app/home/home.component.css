@@ -1,7 +1,7 @@
-/* .banner {
-    width: 583px;
-    height: 600px;
-} */
+.banner {
+    width: 640px;
+    height: 604px;
+}
 
 #titleHome {
     color: var(--Color-secundario, #390084);
@@ -43,11 +43,6 @@
     line-height: 20px;
     letter-spacing: 0.1px;
     border-radius: 10px;
-}
-
-.frame2 {
-    padding-left: 256px;
-    padding-right: 256px;
 }
 
 .contadores {
@@ -97,10 +92,11 @@
     color: #000;
     text-align: center;
     font-family: Urbanist;
-    font-size: 24px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 30px;
+    /* 187.5% */
     letter-spacing: 0.1px;
 }
 
@@ -108,10 +104,11 @@
     color: #000;
     text-align: center;
     font-family: Urbanist;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 40px;
+    line-height: 30px;
+    /* 150% */
     letter-spacing: 0.1px;
 }
 
@@ -120,8 +117,9 @@
 }
 
 .containerPink {
-    height: 315px;
-    border-radius: 50px;
+    height: 225px;
+    width: 249px;
+    border-radius: 5px;
     border: 5px solid var(--Color-terciario, #C496FF);
     background: var(--Color-principal, #FFF);
 }
@@ -134,7 +132,6 @@
     font-style: normal;
     font-weight: 700;
     line-height: 30px;
-    /* 62.5% */
     letter-spacing: 0.1px;
     width: 100px;
     height: 100px;
@@ -160,7 +157,7 @@
     letter-spacing: 0.1px;
 }
 
-.imgHome{
+.imgHome {
     width: 300px;
 }
 
@@ -172,4 +169,31 @@
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0.3px;
+}
+
+.comoFunciona {
+    background-image: url('/assets/home/homeBG.svg');
+}
+
+.subTitlewhite {
+    color: var(--Color-principal, #FFF);
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+}
+
+.subTextHome3white {
+    color: var(--Color-principal, #FFF);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.1px;
 }

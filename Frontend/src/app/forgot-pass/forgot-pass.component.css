@@ -1,0 +1,39 @@
+.titulo {
+    color: #000;
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+.subText {
+    font-size: 20px;
+}
+
+.subText2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.emailPassword {
+    height: 57px;
+    width: 472px;
+}
+
+.botonEnviar {
+    width: 472px;
+}
+
+.regresar {
+    color: var(--Botones, #A851FF);
+    text-align: center;
+    font-family: Urbanist;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}

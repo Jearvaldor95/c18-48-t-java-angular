@@ -16,6 +16,7 @@ import { ServicioProfesionService } from '../service/servicio-profesion.service'
   templateUrl: './professionals.component.html',
   styleUrl: './professionals.component.css'
 })
+
 export class ProfessionalsComponent {
   data: any[] = [];
 
@@ -29,7 +30,6 @@ export class ProfessionalsComponent {
   showData() {
     this.APIrestService.getData().subscribe(data => {
       this.data = data;
-      // console.log("salida professionals" + data);
     });
   }
 

@@ -1,5 +1,6 @@
 .navbarStyle {
-    height: 174px;
+    height: 188px;
+    margin: 10px;
 }
 
 .linksStyles {
@@ -11,6 +12,7 @@
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 0.1px;
+    margin: 0px 88px 0px 0px;
 }
 
 .navButton{

@@ -16,13 +16,13 @@
         <hr class="hrStyle col-5 align-items-center">
     </div>
     <div class="pt-5">
-        <form class="row" action="">
+        <form class="row d-flex" action="" [formGroup]="myForm">
             <div class="col-6">
                 <div>
                     <label for="" class="f-20">Nombre</label>
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="formInputs form-control">
+                    <input type="text" formControlName="nombre" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -30,7 +30,7 @@
                     <label for="" class="f-20">Apellido</label>
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="formInputs form-control">
+                    <input type="text" formControlName="apellidos" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -38,7 +38,7 @@
                     <label for="" class="f-20">Usuario</label>
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="formInputs form-control">
+                    <input type="text" formControlName="username" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -46,7 +46,7 @@
                     <label for="" class="f-20">Correo</label>
                 </div>
                 <div class="mb-4">
-                    <input type="email" class="formInputs form-control">
+                    <input type="email" formControlName="email" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -54,7 +54,7 @@
                     <label for="" class="f-20">Telefono</label>
                 </div>
                 <div class="mb-4">
-                    <input type="tel" class="formInputs form-control">
+                    <input type="tel" formControlName="telefono" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -62,7 +62,7 @@
                     <label for="" class="f-20">Dirección</label>
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="formInputs form-control">
+                    <input type="text" formControlName="direccion" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -70,7 +70,7 @@
                     <label for="" class="f-20">Contraseña</label>
                 </div>
                 <div class="mb-4">
-                    <input type="password" class="formInputs form-control">
+                    <input type="password" formControlName="password" class="formInputs form-control">
                 </div>
             </div>
             <div class="col-6">
@@ -82,14 +82,14 @@
                 </div>
             </div>
             <div class="mx-auto mb-5">
-                <input type="checkbox"><a routerLink="/legal">Aceptar terminos y
-                    condiciones</a>
+                <input type="checkbox"><label for="checkbox" formControlName="terminos" required><a routerLink="/legal">Aceptar terminos y
+                    condiciones</a></label>
             </div>
             <div>
-                <button type="submit" class="botonPurple form-control mb-5">Registrarse</button>
+                <button type="submit" class="botonPurple form-control mb-5" (click)="registre(myForm)">Registrarse</button>
             </div>
             <div class="mb-4">
-                <button class="botonWhite form-control">Continuar como profesional</button>
+                <button class="botonWhite form-control" (click)="registreProfesional(myForm)">Continuar como profesional</button>
             </div>
         </form>
         <div class="d-flex justify-content-center mt-5">

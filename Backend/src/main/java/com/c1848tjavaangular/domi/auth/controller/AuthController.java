@@ -4,6 +4,7 @@ import com.c1848tjavaangular.domi.auth.dto.JwtResponseDto;
 import com.c1848tjavaangular.domi.auth.dto.LoginDto;
 import com.c1848tjavaangular.domi.auth.dto.RegisterDto;
 import com.c1848tjavaangular.domi.auth.service.AuthService;
+import com.c1848tjavaangular.domi.models.entities.Usuarios;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,11 +29,9 @@ public class AuthController {
     }
 
     @PostMapping("/registro")
-    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
+    public ResponseEntity<Usuarios> register(@RequestBody RegisterDto registerDto) {
 
-        authService.registro(registerDto);
-
-        return new ResponseEntity<>("User register success!", HttpStatus.CREATED);
+        return new ResponseEntity<>(authService.registro(registerDto), HttpStatus.CREATED);
     }
 
 }

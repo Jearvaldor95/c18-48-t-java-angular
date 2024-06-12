@@ -22,4 +22,15 @@ public class UploadFileService {
         return "default.jpg";
     }
 
+    public String savePortada(MultipartFile file) throws IOException {
+        if (!file.isEmpty()) {
+            byte [] bytes=file.getBytes();
+            String url = "src/main/resources/static/IMG/portada/";
+            Path path = Paths.get(url +file.getOriginalFilename());
+            Files.write(path, bytes);
+            return file.getOriginalFilename();
+        }
+        return "default.jpg";
+    }
+
 }

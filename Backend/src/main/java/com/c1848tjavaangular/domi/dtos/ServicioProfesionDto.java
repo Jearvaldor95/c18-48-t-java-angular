@@ -12,4 +12,5 @@ public class ServicioProfesionDto implements Serializable{
     private Integer idServicioProfesion;
     private Integer idUsuario;
     private Integer idServicio;
+    private String descripcion;
 }

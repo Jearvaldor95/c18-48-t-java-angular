@@ -9,14 +9,17 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ServiciosUsuarioDto {
+public class ServiciosProfesionalDto {
     private Integer idServicioProfesion;
     private String nombreUsuario;
     private String apellidosUsuario;
     private String sobreMi;
     private String foto;
+    private String portada;
     private String telefonoUsuario;
     private String emailUsuario;
     private String direccionUsuario;
     private String nombreServicio;
+    private String fotoServicio;
+    private String descripcionServicio;
 }

@@ -25,9 +25,11 @@ public class UsuariosController {
         this.uploadFileService = uploadFileService;
     }
     @PutMapping(value = "/usuario/{idUsuario}",consumes = "multipart/form-data")
-    public ResponseEntity<?> updatePerfil(@RequestPart("foto") MultipartFile foto,@PathVariable Integer idUsuario, @RequestPart UsuariosDto usuariosDto) throws IOException {
+    public ResponseEntity<?> updatePerfil(@RequestPart("foto") MultipartFile foto, @RequestPart("portada") MultipartFile portada,@PathVariable Integer idUsuario, @RequestPart UsuariosDto usuariosDto) throws IOException {
         String nombreFoto = uploadFileService.saveFoto(foto);
+        String nombrePortada = uploadFileService.savePortada(portada);
         usuariosDto.setFoto(nombreFoto);
+        usuariosDto.setPortada(nombrePortada);
         usuariosService.updatePerfil(idUsuario, usuariosDto);
         return ResponseEntity.ok().body("Perfil actualizado!");
     }

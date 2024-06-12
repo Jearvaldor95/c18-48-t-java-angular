@@ -45,6 +45,7 @@ public class Usuarios implements Serializable {
     @NotNull
     private String telefono;
     private String foto;
+    private String portada;
     @Column(name = "sobre_mi")
     private String sobreMi;
     @Column(nullable = false, unique = true)

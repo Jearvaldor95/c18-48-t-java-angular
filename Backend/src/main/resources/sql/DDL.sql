@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     password VARCHAR(255) NOT NULL,
     telefono VARCHAR(15) NOT NULL,
     foto VARCHAR(255),
+    portada VARCHAR(100),
     sobre_mi VARCHAR(255),
     email VARCHAR(50) NOT NULL UNIQUE,
     direccion VARCHAR(100),
@@ -21,7 +22,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
 -- Create 'servicios' table
 CREATE TABLE IF NOT EXISTS servicios (
     idservicio INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL UNIQUE
+    nombre VARCHAR(50) NOT NULL UNIQUE,
+    foto VARCHAR(255)
 );
 
 -- Create 'servicio_profesion' table
@@ -29,6 +31,7 @@ CREATE TABLE IF NOT EXISTS servicio_profesion (
 	idservicio_profesion INT AUTO_INCREMENT PRIMARY KEY,
     idusuario INT,
     idservicio INT,
+    descripcion VARCHAR(255),
     FOREIGN KEY (idusuario) REFERENCES usuarios(idusuario) ON DELETE CASCADE,
     FOREIGN KEY (idservicio) REFERENCES servicios(idservicio) ON DELETE CASCADE
 );

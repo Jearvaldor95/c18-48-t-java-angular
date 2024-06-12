@@ -11,4 +11,5 @@ import lombok.ToString;
 public class ServiciosDto implements Serializable {
     private Integer idServicio;
     private String nombre;
+    private String foto;
 }

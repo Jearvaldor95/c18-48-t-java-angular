@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { APIrestService } from "../service/form-request.service";
-import { FormsModule } from "@angular/forms";
+import { FormBuilder, FormGroup, FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
 
 // pages components
 import { NavBarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { RegistroService } from '../service/registro.service';
 
 @Component({
   selector: 'app-registro',
@@ -20,42 +21,58 @@ import { FooterComponent } from '../footer/footer.component';
 
 export class RegistroComponent {
 
-//   data: any[] = [];
+  myForm!: FormGroup;
 
-//   userData = {
-//     name: '',
-//     lastname: '',
-//     tel: '',
-//     email: '',
-//     address: '',
-//     user: '',
-//     pass: '',
-//   };
+   constructor(private fb: FormBuilder, private registroService: RegistroService) {
+    this.myForm = this.fb.group({
+      id: [''],
+      nombre: [''],
+      apellidos: [''],
+      username: [''],
+      email: [''],
+      password: [''],
+      telefono: [''],
+      direccion: [''],
+      isProfesional: [false], 
+      terminos: ['']
+    });
 
-//   constructor(public APIrestService: APIrestService) { }
+  }
 
-// ApiData() {
-//   this.APIrestService.getData().subscribe(data => {
-//     this.data = data;
-//     console.log(this.data);
-//   },
-//     error => {
-//       console.error('Error al obtener datos:', error);
-//     }
-//   )
-// }
+  registre(form: FormGroup){
+    if (this.myForm.valid) {
+      if (form.value.id && form.value.id !== 0) {
+        return;
+      }
+      this.registroService.registre(form.value)
+        .subscribe(data => {
+          console.log('Registro exitoso! ',data);
+        }
+        )
+    }
+    else {
+      console.log('Formulario inválido');
+    }
+  }
 
-// submitForm(form: any): void {
-//   if(form.valid) {
-//   console.log('Form data:', this.userData);
-// }
-//   }
 
-//   // ApiData2() {
-//   //   http.get<any>("https://my-json-server.typicode.com/typicode/demo/comments").subscribe(data => {
-//   //     this.data = data;
-//   //     console.log(this.data);
-//   //   });
-//   // }
+  registreProfesional(form: FormGroup){
+    if (this.myForm.valid) {
+      if (form.value.id && form.value.id !== 0) {
+        return;
+      }
+      this.myForm.value.isProfesional=true;
+      this.registroService.registre(form.value)
+        .subscribe(data => {
+          console.log('Registro exitoso! ',data);
+        }
+        )
+    }
+    else {
+      console.log('Formulario inválido');
+    }
+  }
+
+
 
 }

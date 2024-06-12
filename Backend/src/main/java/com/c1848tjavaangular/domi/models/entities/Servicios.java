@@ -23,4 +23,5 @@ public class Servicios implements Serializable{
     @Column(name="idservicio")
     private Integer idServicio;
     private String nombre;
+    private String foto;
 }

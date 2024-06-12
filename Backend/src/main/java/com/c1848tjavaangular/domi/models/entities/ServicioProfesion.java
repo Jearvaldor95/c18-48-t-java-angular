@@ -32,6 +32,7 @@ public class ServicioProfesion implements Serializable {
     private Integer idServicio;
     @Column(name = "idusuario")
     private Integer idUsuario;
+    private String descripcion;
 
     @ManyToOne
      @JoinColumn(name = "idservicio", insertable=false, updatable=false)

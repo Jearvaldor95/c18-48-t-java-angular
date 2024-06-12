@@ -24,7 +24,7 @@ FROM solicitudes so
 JOIN usuarios u ON so.idusuario = u.idusuario
 JOIN servicio_profesion sp ON so.idservicio_profesion = sp.idservicio_profesion
 JOIN servicios s ON sp.idservicio = s.idservicio
-WHERE so.estado = 'Completed';
+WHERE so.estado = 'Terminada';
 
 -- Solicitudes pendientes
 SELECT so.idsolicitud, u.nombre AS Usuario, s.nombre AS Servicio, so.mensaje
@@ -33,7 +33,7 @@ JOIN usuarios u ON so.idusuario = u.idusuario
 JOIN servicio_profesion sp ON so.idservicio_profesion = sp.idservicio_profesion
 JOIN usuarios us ON sp.idusuario = us.idusuario
 JOIN servicios s ON sp.idservicio = s.idservicio
-WHERE so.estado = 'Pending';
+WHERE so.estado = 'Pendiente';
 
 
 -- Profesionales con servicio especifico
@@ -41,4 +41,4 @@ SELECT u.nombre, u.apellidos, u.telefono, u.email
 FROM usua;rios u
 JOIN servicio_profesion sp ON u.idusuario = sp.idusuario
 JOIN servicios s ON sp.idservicio = s.idservicio
-WHERE s.nombre = 'Plumbing';
+WHERE s.nombre = 'Pendiente';

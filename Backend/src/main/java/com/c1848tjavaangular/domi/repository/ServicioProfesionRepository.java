@@ -1,6 +1,6 @@
 package com.c1848tjavaangular.domi.repository;
 
-import com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto;
+import com.c1848tjavaangular.domi.dtos.ServiciosProfesionalDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.c1848tjavaangular.domi.models.entities.ServicioProfesion;
@@ -13,39 +13,64 @@ import java.util.List;
 public interface ServicioProfesionRepository extends JpaRepository<ServicioProfesion, Integer> {
 
     // Todos los usuarios profesionales con sus servicios
-    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
-            "FROM Usuarios u \n" +
-            "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
-            "JOIN Servicios s ON sp.servicio.id = s.id ")
-    List<ServiciosUsuarioDto> findAllServiciosAndUsuarios();
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
+            "MIN(s.foto) AS fotoServicio, " +
+            "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
+            "FROM usuarios u " +
+            "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
+            "LEFT JOIN servicios s ON sp.idservicio = s.idservicio " +
+            "WHERE u.isProfesional = 1 " +
+            "GROUP BY u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto",
+            nativeQuery = true)
+    List<Object[]> findAllProfesionales();
+
+    // Todos los servicios del profesional por ID
+    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosProfesionalDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
+            "FROM Usuarios u JOIN ServicioProfesion sp ON u.id = sp.usuario.id JOIN Servicios s ON sp.servicio.id = s.id WHERE u.id =:idUsuario")
+    List<ServiciosProfesionalDto> findAllServiciosProfesionByIdUsuario(Integer idUsuario);
 
     // Usuarios profesionales con sus servicios por nombre servicio
-    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
-            "FROM Usuarios u \n" +
-            "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
-            "JOIN Servicios s ON sp.servicio.id = s.id  WHERE s.nombre LIKE %:nombreServicio%")
-    List<ServiciosUsuarioDto> findByServiciosNombre(String nombreServicio);
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
+            "MIN(s.foto) AS fotoServicio, " +
+            "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
+            "FROM usuarios u " +
+            "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
+            "LEFT JOIN servicios s ON sp.idservicio = s.idservicio " +
+            "WHERE u.isProfesional = 1 AND s.nombre LIKE %:nombreServicio% " +
+            "GROUP BY u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto",
+            nativeQuery = true)
+    List<Object[]> findProfesionalesByNombreServicio(String nombreServicio);
 
     // Usuarios profesionales con sus servicios por nombre servicio y direccion
-    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
-            "FROM Usuarios u \n" +
-            "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
-            "JOIN Servicios s ON sp.servicio.id = s.id  WHERE s.nombre LIKE %:nombreServicio% AND u.direccion LIKE %:direccionUsuario%")
-    List<ServiciosUsuarioDto> findByServiciosNombreAndUsuariosDireccion(String nombreServicio, String direccionUsuario);
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
+            "MIN(s.foto) AS fotoServicio, " +
+            "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
+            "FROM usuarios u " +
+            "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
+            "LEFT JOIN servicios s ON sp.idservicio = s.idservicio " +
+            "WHERE u.isProfesional = 1 AND s.nombre LIKE %:nombreServicio% AND u.direccion LIKE %:direccionUsuario% " +
+            "GROUP BY u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto",
+            nativeQuery = true)
+    List<Object[]> findProfesionalByNombreServicioAndDireccion(String nombreServicio, String direccionUsuario);
 
     // Usuarios profesionales con sus servicios por direccion
-    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
-            "FROM Usuarios u \n" +
-            "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
-            "JOIN Servicios s ON sp.servicio.id = s.id  WHERE u.direccion LIKE %:direccionUsuario%")
-    List<ServiciosUsuarioDto> findByUsuariosDireccion(String direccionUsuario);
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
+            "MIN(s.foto) AS fotoServicio, " +
+            "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
+            "FROM usuarios u " +
+            "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
+            "LEFT JOIN servicios s ON sp.idservicio = s.idservicio " +
+            "WHERE u.isProfesional = 1 AND u.direccion LIKE %:direccionUsuario% " +
+            "GROUP BY u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto",
+            nativeQuery = true)
+    List<Object[]> findProfesionalByDireccion(String direccionUsuario);
 
     // Usuario profesional con sus servicio por idServicio
-    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
+    @Query("SELECT new com.c1848tjavaangular.domi.dtos.ServiciosProfesionalDto(sp.id, u.nombre, u.apellidos, u.sobreMi, u.foto, u.portada, u.telefono, u.email, u.direccion, s.nombre, s.foto, sp.descripcion) \n" +
             "FROM Usuarios u \n" +
             "JOIN ServicioProfesion sp ON u.id = sp.usuario.id \n" +
             "JOIN Servicios s ON sp.servicio.id = s.id WHERE sp.id =:idServicioP")
-    ServiciosUsuarioDto findServicioUsuarioById(Integer idServicioP);
+    ServiciosProfesionalDto findServicioProfesionalById(Integer idServicioP);
 
     // Obtener el email del usuario profesional por el idservicio_profesion
     @Query(value = "SELECT  us.email\n" +

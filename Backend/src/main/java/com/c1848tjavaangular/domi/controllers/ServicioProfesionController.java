@@ -2,7 +2,7 @@ package com.c1848tjavaangular.domi.controllers;
 
 import com.c1848tjavaangular.domi.auth.jwt.JwtService;
 import com.c1848tjavaangular.domi.dtos.ServicioProfesionDto;
-import com.c1848tjavaangular.domi.dtos.ServiciosUsuarioDto;
+import com.c1848tjavaangular.domi.dtos.ServiciosProfesionalDto;
 import com.c1848tjavaangular.domi.services.ServicioProfesionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,18 +23,18 @@ public class ServicioProfesionController {
     }
 
     @GetMapping("/servicio-profesion")
-    public ResponseEntity<?> getServiciosAndUsuarios(){
-        return ResponseEntity.ok(servicioProfesionService.findAllServiciosAndUsuarios());
+    public ResponseEntity<?> getProfesionales(){
+        return ResponseEntity.ok(servicioProfesionService.getProfesionales());
     }
 
-    @GetMapping("/servicio-profesion/{id}")
-    public ResponseEntity<ServiciosUsuarioDto> getServicioId(@PathVariable Integer id){
-        return ResponseEntity.ok(servicioProfesionService.getServicioUsuarioById(id));
+    @GetMapping("/servicio-profesion/{idUsuario}")
+    public ResponseEntity<List<ServiciosProfesionalDto>> getServicioProfesionalByIdUsuario(@PathVariable Integer idUsuario){
+        return ResponseEntity.ok(servicioProfesionService.getServiciosProfesionByIdUsuario(idUsuario));
     }
     
     @GetMapping("/servicio-profesion/nombre")
-    public ResponseEntity<?> getProfesional(@RequestParam String nombreServicio){
-       return ResponseEntity.ok(servicioProfesionService.findByServiciosNombre(nombreServicio));
+    public ResponseEntity<?> getProfesionalesByNombreServicio(@RequestParam String nombreServicio){
+       return ResponseEntity.ok(servicioProfesionService.getProfesionalesByNombreServicio(nombreServicio));
     }
 
     @PostMapping("/servicio-profesion")
@@ -44,13 +44,13 @@ public class ServicioProfesionController {
     }
 
     @GetMapping("/servicio-profesion/nombre-direccion")
-    public ResponseEntity<?> getServiciosNombreAndUsuariosDireccion(@RequestParam String nombreServicio, @RequestParam String direccion){
-        return ResponseEntity.ok(servicioProfesionService.findByServiciosNombreAndUsuariosDireccion(nombreServicio, direccion));
+    public ResponseEntity<?> getProfesionalByNombreServicioAndDireccion(@RequestParam String nombreServicio, @RequestParam String direccion){
+        return ResponseEntity.ok(servicioProfesionService.getProfesionalByNombreServicioAndDireccion(nombreServicio, direccion));
     }
 
     @GetMapping("/servicio-profesion/direccion")
-    public ResponseEntity<?> getUsuariosDireccion(@RequestParam String direccion){
-        return ResponseEntity.ok(servicioProfesionService.findByUsuariosDireccion(direccion));
+    public ResponseEntity<?> getProfesionalByDireccion(@RequestParam String direccion){
+        return ResponseEntity.ok(servicioProfesionService.getProfesionalByDireccion(direccion));
     }
 
     @DeleteMapping("/servicio-profesion/{id}")

@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ServiciosUsuarioDto {
+public class ServiciosProfesionalDto {
     private Integer idServicioProfesion;
     private String nombreUsuario;
     private String apellidosUsuario;

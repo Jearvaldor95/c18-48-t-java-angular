@@ -13,7 +13,7 @@
                         <p class="col-3 f-16 text-center">o inicia sesión con</p>
                         <hr class="hrStyle col-4 align-items-center">
                     </div>
-                    <form class="row pt-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <form class="row pt-2" [formGroup]="myForm" (ngSubmit)="login(myForm)">
                         <div If="errorMessage">
                             {{ errorMessage }}
                         </div>

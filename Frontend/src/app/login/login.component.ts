@@ -1,7 +1,5 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 // pages components
 import { NavBarComponent } from '../navbar/navbar.component';
@@ -16,49 +14,34 @@ import { LoginService } from '../service/login.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  private backendUrl = 'http://localhost:8095/'
- 
-  loginForm: FormGroup = new FormGroup({}); 
+  myForm!: FormGroup;
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder,private loginService: LoginService, private router: Router, private httpClient: HttpClient){}
+  constructor(private fb: FormBuilder,private loginService: LoginService, private router: Router){
+    this.myForm = this.fb.group({
+      email: [''],
+      password: [''],
+    });
+  }
 
-  data: any = {};
-  private token: string = '';
 
-    ngOnInit(): void {
-
-    }
-
-onSubmit(){
-  console.log(this.loginForm.value);
-}
-
-// login() {
-//   this.loginService.loginServices(loginForm.value).subscribe(data => {
-//     this.data = data;
-//     console.log(this.data);
-//   });;
-//   return this.httpClient.post<any>(`${this.backendUrl}/auth/login`, body);
-
-// }
-
-  // login(loginForm: FormGroup){
-  //     this.loginService.login(loginForm.value)
-  //       .subscribe( {
-  //         next: () => {
-  //           // Navegar a otra ruta después de un inicio de sesión exitoso
-  //           this.router.navigate(['/professionals']);
-  //         },
-  //         error: () => {
-  //           // Manejar errores de inicio de sesión
-  //           this.errorMessage = 'Credenciales invalidas';
-  //         }
+  login(form: FormGroup){
+      this.loginService.login(form.value)
+        .subscribe( {
+          next: () => {
+            // Navegar a otra ruta después de un inicio de sesión exitoso
+            this.router.navigate(['/professionals']);
+          },
+          error: () => {
+            // Manejar errores de inicio de sesión
+            this.errorMessage = 'Credenciales invalidas';
+            console.log("Credenciales invalidas")
+          }
           
-  //       }
-  //     );
-  // }
+        }
+      );
+  }
 
 }

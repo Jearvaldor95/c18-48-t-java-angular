@@ -34,7 +34,6 @@ export class ServicioProfesionService {
 
   getServiciosProfesionales(): Observable<ServiciosUsuario[]>{
     const headers = this.getHeaders();
-    console.log(this.httpClient.get<ServiciosUsuario[]>(`${this.backendUrl}`, { headers }));
     return this.httpClient.get<ServiciosUsuario[]>(`${this.backendUrl}`, { headers });
   }
 

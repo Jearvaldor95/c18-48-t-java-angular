@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
-import { APIrestService } from '../service/form-request.service';
 import { CommonModule } from '@angular/common';
 
 // pages components
@@ -22,18 +21,18 @@ export class ProfessionalsComponent {
 
   constructor(private servicioProfesion: ServicioProfesionService) { }
 
-  ngOnInit(): void {
-    this.getServiciosProfesional();
-  }
+  // ngOnInit(): void {
+  //   this.getServiciosProfesional();
+  // }
 
-  getServiciosProfesional(){
-    this.servicioProfesion.getServiciosProfesionales().subscribe(data => {
-      this.data = data;
-      console.log(this.data);
-    },
-    error => {
-      console.error('Error al obtener los datos:', error);
-    });
-  }
+  // getServiciosProfesional(){
+  //   this.servicioProfesion.getServiciosProfesionales().subscribe(data => {
+  //     this.data = data;
+  //     console.log(this.data);
+  //   },
+  //   error => {
+  //     console.error('Error al obtener los datos:', error);
+  //   });
+  // }
 
 }

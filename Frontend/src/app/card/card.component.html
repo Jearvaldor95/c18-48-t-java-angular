@@ -1,15 +1,15 @@
-<div class="card col-2 noStyles">
+<div class="card cardSize m-0 p-0">
     <div class="banner noStyles">
-        <img class="banner" src="assets/servicios/{{data.fotoServicio}}" alt="banner">
+        <img class="banner" src="assets/temp/banner.svg" alt="banner">
     </div>
     <div class="profilePhotoDIV">
-        <img class="profilePhoto" src="assets/profile/{{data.foto}}" alt="profile">
+        <img class="profilePhoto" src="assets/temp/fotoPerfil.svg" alt="profile">
     </div>
     <div class="cardInfo">
         <div class="row mx-0 ps-3 pe-0">
             <div class="row noStyles">
                 <div class="col-6 noStyles d-flex">
-                    <h1 class="name d-flex noStyles">{{ data.nombreUsuario }}</h1>
+                    <h1 class="name d-flex noStyles">juan</h1>
                 </div>
                 <div class="col-iconos noStyles d-flex">
                     <img src="assets/card/check.svg" alt="verification">
@@ -17,7 +17,13 @@
             </div>
             <div class="row noStyles">
                 <div class="estrellas col-3">
-                    <p class="noStyles">⋆⋆⋆⋆⋆</p>
+                    <div class="text-center">
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                    </div>
                 </div>
                 <div class="scoreDIV col-1">
                     <p class="scoreData noStyles">4.5</p>
@@ -31,7 +37,7 @@
                     <img class="iconos" src="assets/card/maletin.svg" alt="icono">
                 </div>
                 <div class="col-10 noStyles">
-                    <p class="informacionPersonal">{{ data.nombreServicio }}</p>
+                    <p class="informacionPersonal">Manicurista</p>
                 </div>
             </div>
             <div class="row informacionPersonalDIV2">
@@ -39,13 +45,14 @@
                     <img class="iconos noStyles" src="assets/card/ubicacion.svg" alt="icono">
                 </div>
                 <div class="col-10 noStyles">
-                    <p class="informacionPersonal">{{ data.direccionUsuario }}</p>
+                    <p class="informacionPersonal">Bogotá, Colombia</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="noStyles">
-        <!-- <button routerLink="/profile" class="verPerfilButton" (click)="verProfesional(data.idServicioProfesion);">Ver perfil</button> -->
+        <button routerLink="/profile" class="verPerfilButton">Ver perfil</button>
     </div>
 </div>
+
 <router-outlet></router-outlet>

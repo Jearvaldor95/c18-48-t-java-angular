@@ -82,12 +82,9 @@
     letter-spacing: 0.1px;
 }
 
-.btnAdquirir {
+.btnPerfil {
     width: 160px;
-}
-
-.btnContactar {
-    width: 208px;
+    height: 43px;
 }
 
 .profileResume {

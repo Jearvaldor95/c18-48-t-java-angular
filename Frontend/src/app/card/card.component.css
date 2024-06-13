@@ -110,12 +110,12 @@
 }
 
 .informacionPersonalDIV1{
-    margin-top: 12px;
+    margin-top: 0px;
 }
 
 .informacionPersonalDIV2{
-    margin-top: 14px;
-    margin-bottom: 25px;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
 
 .col-iconos {
@@ -133,10 +133,14 @@
     letter-spacing: 0.10px;
     word-wrap: break-word;
     width: 261px;
-    height: 45px;
+    height: 46px;
     border: 0px;
     border-radius: 0px 0px 9px 9px;
     margin: 0px;
     padding: 0px;
     background-color: #A851FF;
+}
+
+.stars{
+    font-size: 10px;
 }

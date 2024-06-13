@@ -1,3 +1,13 @@
+.container{
+    width: 1536px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 120px;
+    
+}
+
 .eslogan {
     color: #4D4D4D;
     font-family: Urbanist, sans-serif;
@@ -52,4 +62,40 @@ h1 {
 .socialMedia:active {
     color: #e6edf2ff;
     transition: 0.2s;
+}
+
+@media (max-width: 1536px){
+    .container {
+        max-width: 1536px;
+    }
+}
+
+@media (max-width: 1280px){
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 1024px){
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 768px){
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 640px){
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 475px){
+    .container {
+        max-width: 475px;
+    }
 }

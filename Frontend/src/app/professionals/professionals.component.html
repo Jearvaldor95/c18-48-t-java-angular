@@ -1,20 +1,22 @@
 <app-navbar></app-navbar>
-<div class="mb-4">
-    <form action="" class="row">
-        <div class="col-4 filtro1DIV noStyle">
-            <input class="filtro1 noStyle" type="text" placeholder="Ubicación">
+<div class="container">
+    <div class="mb-4">
+        <form action="" class="row">
+            <div class="col-4 filtro1DIV noStyle">
+                <input class="filtro1 noStyle" type="text" placeholder="Ubicación">
+            </div>
+            <div class="col-4 filtro2DIV noStyle">
+                <input class="filtro2 noStyle" type="text" placeholder="Categoria">
+            </div>
+            <div class="col-4 filtro3DIV noStyle">
+                <input class="filtro3 noStyle" type="text" placeholder="Subcategoria">
+            </div>
+        </form>
+    </div>
+    <div class="row pt-5 px-0 mx-0 my-0 d-flex">
+        <div *ngFor="let item of data" class="col-3 mb-4">
+            <app-card [data]="item"></app-card>
         </div>
-        <div class="col-4 filtro2DIV noStyle">
-            <input class="filtro2 noStyle" type="text" placeholder="Categoria">
-        </div>
-        <div class="col-4 filtro3DIV noStyle">
-            <input class="filtro3 noStyle" type="text" placeholder="Subcategoria">
-        </div>
-    </form>
-</div>
-<div class="row pt-5 px-0 mx-0 my-0 d-flex">
-    <div *ngFor="let item of data" class="col-3 mb-4">
-        <app-card [data]="item"></app-card>
     </div>
 </div>
 <app-footer></app-footer>

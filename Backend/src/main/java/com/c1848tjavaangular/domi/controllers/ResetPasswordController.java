@@ -2,6 +2,7 @@ package com.c1848tjavaangular.domi.controllers;
 
 import com.c1848tjavaangular.domi.services.ResetPasswordService;
 import com.c1848tjavaangular.domi.services.impl.EmailService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,9 @@ public class ResetPasswordController {
     private final ResetPasswordService resetPassword;
     private final EmailService emailService;
 
+    @Value("${resetUrl}")
+    String resetUrl; // url del reset password
+
     public ResetPasswordController(ResetPasswordService resetPassword, EmailService emailService) {
         this.resetPassword = resetPassword;
         this.emailService = emailService;
@@ -20,8 +24,8 @@ public class ResetPasswordController {
     @PostMapping("/forgot")
     public ResponseEntity<String> forgotPassword(@RequestParam String email) {
         String token = resetPassword.createPasswordResetToken(email);
-        String resetUrl = "http://localhost:8095/password/reset?token=" + token;
-        emailService.sendSimpleMessage(email, "Password Reset Request", "Haga clic en el enlace para restabecer su contraseña: " + resetUrl);
+        String resetPassword =  resetUrl + token;
+        emailService.sendSimpleMessage(email, "Password Reset Request", "Haga clic en el enlace para restabecer su contraseña: " + resetPassword);
         return ResponseEntity.ok("Password reset email sent");
     }
 

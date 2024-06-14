@@ -12,8 +12,6 @@ public interface UsuariosService {
 
     public UsuariosDto findById(Integer idUsuario);
 
-    public UsuariosDto upload(Integer id,UsuariosDto usuariosDto);
-
     public String getTelefono(Integer idUsuario);
 
 }

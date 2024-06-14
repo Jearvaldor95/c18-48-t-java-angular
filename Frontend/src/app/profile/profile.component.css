@@ -145,3 +145,11 @@
     line-height: 20px;
     letter-spacing: 0.1px;
 }
+
+.estrellas {
+    height: 12px;
+    /* margin-top: 9px; */
+    padding: 0px;
+    margin: 0px 10px 0px 0px;
+    color: #A851FF;
+}

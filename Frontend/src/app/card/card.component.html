@@ -1,24 +1,24 @@
 <div class="card cardSize m-0 p-0">
-    <div class="banner noStyles">
+    <div class="banner m-0 p-0">
         <img class="banner" src="assets/temp/banner.svg" alt="banner">
     </div>
     <div class="profilePhotoDIV">
-        <img class="profilePhoto" [src]="data.fotoProfesional" alt="profile">
+        <img class="profilePhoto" [src]="data.fotoProfesional" alt="foto">
     </div>
     <div class="cardInfo">
-        <div class="infoContainer row m-0 p-0">
-            <div class="row noStyles">
-                <div class="col-6 noStyles d-flex">
-                    <h1 class="name d-flex noStyles text-truncate">{{data.nombreProfesional + " " +
+        <div class="infoContainer row my-0 ms-3 me-0 p-0">
+            <div class="row m-0 p-0 row align-content-center">
+                <div class="col-6 m-0 p-0 d-flex">
+                    <h1 class="name d-flex m-0 p-0 text-truncate">{{data.nombreProfesional + " " +
                         data.apellidosProfesional}}</h1>
                 </div>
-                <div class="col-iconos noStyles d-flex">
+                <div class="col-iconos m-0 p-0 d-flex">
                     <img src="assets/card/check.svg" alt="verification">
                 </div>
             </div>
-            <div class="row noStyles">
-                <div class="estrellas col-3">
-                    <div class="text-center">
+            <div class="row m-0 p-0">
+                <div class="estrellas col-4 row align-content-center">
+                    <div class="p-0 m-0">
                         <i class="bi bi-star-fill stars"></i>
                         <i class="bi bi-star-fill stars"></i>
                         <i class="bi bi-star-fill stars"></i>
@@ -27,32 +27,32 @@
                     </div>
                 </div>
                 <div class="scoreDIV col-1">
-                    <p class="scoreData noStyles">4.5</p>
+                    <p class="scoreData m-0 p-0">4.5</p>
                 </div>
                 <div class="conteoReseñas col-4">
-                    <p class="conteoReseñasData noStyles">(126)</p>
+                    <p class="conteoReseñasData m-0 p-0">(126)</p>
                 </div>
             </div>
-            <div class="row informacionPersonalDIV1">
-                <div class="col-iconos noStyles">
+            <div class="row informacionPersonalDIV1 row align-content-center">
+                <div class="col-iconos m-0 p-0">
                     <img class="iconos" src="assets/card/maletin.svg" alt="icono">
                 </div>
-                <div class="col-10 noStyles">
+                <div class="col-10 m-0 p-0">
                     <p class="informacionPersonal">{{data.servicios}}</p>
                 </div>
             </div>
-            <div class="row informacionPersonalDIV2">
-                <div class="col-iconos noStyles">
-                    <img class="iconos noStyles" src="assets/card/ubicacion.svg" alt="icono">
+            <div class="row informacionPersonalDIV2 row align-content-center">
+                <div class="col-iconos m-0 p-0">
+                    <img class="iconos m-0 p-0" src="assets/card/ubicacion.svg" alt="icono">
                 </div>
-                <div class="col-10 noStyles">
+                <div class="col-10 m-0 p-0">
                     <p class="informacionPersonal">{{data.direccionProfesional}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="noStyles">
-        <button routerLink="/profile" class="verPerfilButton">Ver perfil</button>
+    <div class="m-0 p-0">
+        <button routerLink="/profile" class="verPerfilButton" onclick="verProfesional(data.idUsuario)">Ver perfil</button>
     </div>
 </div>
 

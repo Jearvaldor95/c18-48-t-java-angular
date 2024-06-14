@@ -13,7 +13,10 @@ export class ServicioProfesionService {
 
   constructor(private httpClient: HttpClient) { }
 
+  private datosObtenidos: { [key: string]: any } = {};
+
   data: any = {};
+
   private token: string = '';
 
   setToken(token: string) {
@@ -23,6 +26,15 @@ export class ServicioProfesionService {
 
   getToken(): string {
     return this.token || localStorage.getItem('token') || '';
+  }
+
+
+  setData(key: string, value: any) {
+    this.datosObtenidos[key] = value;
+  }
+
+  getData(key: string): any {
+    return this.datosObtenidos[key];
   }
 
   private getHeaders() {
@@ -37,7 +49,7 @@ export class ServicioProfesionService {
     return this.httpClient.get<ServiciosUsuario[]>(`${this.backendUrl}`, { headers });
   }
 
-//   getServicioProfesionalId(id: number){
-//     return this.httpClient.get<ServiciosUsuario>(`${this.backendUrl}/${id}`)
-//   }
+  getServicioProfesionalId(id: number){
+    return this.httpClient.get<ServiciosUsuario>(`${this.backendUrl}/${id}`)
+  }
 }

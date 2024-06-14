@@ -22,18 +22,20 @@ import { Solicitud } from '../interfaces/solicitud';
 })
 
 export class ProfileComponent {
-
-  data: any;
   
-  
-  myForm!: FormGroup;
-  solicitud!: Solicitud;
+  perfil: any;
 
-  constructor(private APIrestService: APIrestService,private fb:FormBuilder, private servicioProfesion: ServicioProfesionService, private solicitudService: SolicitudService, private location: Location ) { 
+  // myForm!: FormGroup;
+  // solicitud!: Solicitud;
+
+  constructor(private fb:FormBuilder, private servicioProfesion: ServicioProfesionService, private solicitudService: SolicitudService, private location: Location ) { 
     
   }
   ngOnInit(): void {
-    this.showData();
+    // this.showData();
+
+    this.perfil = this.servicioProfesion.getData('perfil');
+    console.log(this.perfil);
   
     // this.data = this.servicioProfesion.getData('perfil');
     // console.log(this.data);
@@ -53,12 +55,6 @@ export class ProfileComponent {
   //   });
   // }
 
-  showData() {
-    this.APIrestService.getData().subscribe(data => {
-      this.data = data;
-      console.log(this.data);
-    })
-  }
 
   goBack() {
     this.location.back();}

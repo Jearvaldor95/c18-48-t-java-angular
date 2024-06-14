@@ -1,23 +1,29 @@
 <app-navbar></app-navbar>
 <div class="profile noStyles">
     <div class="portada">
-        <div class="bannerDIV">
-            <img class="banner" src="assets/temp/temp.svg" alt="profile banner">
+        <div class="bannerDIV" *ngIf="perfil">
+            <img class="banner" [src]="perfil.portada" alt="profile banner">
 
         </div>
         <div class="arrowDIV"><button class="arrowButton" (click)="goBack()"><img class="arrow" src="assets/profile/arrow.svg" alt="arrow"></button></div>
-        <div class="profilePhotoDIV">
-            <img class="profilePhoto" src="assets/profile/{{data.foto}}" alt="Foto de Perfil">
+        <div class="profilePhotoDIV" *ngIf="perfil">
+            <img class="profilePhoto" src="assets/profile/{{perfil.foto}}" alt="Foto de Perfil">
         </div>
     </div>
     <div class="mb-5">
         <div class="profileInfo mb-5">
             <div class="row noStyles mb-5 row align-content-center">
-                <div class="col-3 noStyles">
-                    <h1>{{data?.nombreUsuario}}</h1>
+                <div class="col-3 noStyles" *ngIf="perfil">
+                    <h1>{{perfil?.nombreUsuario}}</h1>
                 </div>
-                <div class="col-1 noStyles">
-                    <p>*****</p>
+                <div class="estrellas col-4 row align-content-center">
+                    <div class="p-0 m-0">
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                        <i class="bi bi-star-fill stars"></i>
+                    </div>
                 </div>
                 <div class="col-1 noStyles">
                     <p>4.5</p>
@@ -31,22 +37,22 @@
                     <div class="col-1 noStyles">
                         <img class="iconos" src="assets/profile/maletin.svg" alt="maletin">
                     </div>
-                    <div class="col-11 noStyles">
-                        <p class="servicioPerfil">{{data?.nombreServicio}}</p>
+                    <div class="col-11 noStyles" *ngIf="perfil">
+                        <p class="servicioPerfil">{{perfil?.nombreServicio}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="noStyles col-1">
                         <img class="iconos" src="assets/profile/marcador.svg" alt="marcador">
                     </div>
-                    <div class="noStyles col-11">
-                        <p class="servicioPerfil">{{data?.direccionUsuario}}</p>
+                    <div class="noStyles col-11" *ngIf="perfil">
+                        <p class="servicioPerfil">{{perfil?.direccionUsuario}}</p>
                     </div>
                 </div>
             </div>
             <div class="row mb-5 pb-5">
                 <div class="col-2 noStyles">
-                    <button class="botonPurple f-24">Adquirir servicio</button>
+                    <button class="botonPurple botonAdquirir f-24">Adquirir servicio</button>
                 </div>
                 <div class="col-2 noStyles">
                     <button class="botonWhite f-24 btnPerfil">Contactar</button>
@@ -56,8 +62,8 @@
                 <div>
                     <h2>Sobre mí</h2>
                 </div>
-                <div class="mb-5">
-                    <p class="profileResume">{{data?.sobreMi}}</p>
+                <div class="mb-5" *ngIf="perfil">
+                    <p class="profileResume">{{perfil?.sobreMi}}</p>
                 </div>
             </div>
             <div class="row pt-5 mb-5 text-center">
@@ -91,9 +97,9 @@
                     <p class="titleDark">Servicios ofrecidos</p>
                 </div>
                 <div class="row">
-                    <div *ngFor="let item of data" class="col-4 px-0 mx-0 my-0 pt-0 pb-5 d-flex justify-content-center">
+                    <!-- <div *ngFor="let item of data" class="col-4 px-0 mx-0 my-0 pt-0 pb-5 d-flex justify-content-center">
                         <app-profile-services [data]="item"></app-profile-services>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

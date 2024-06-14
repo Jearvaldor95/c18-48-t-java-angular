@@ -55,9 +55,10 @@
 
 .estrellas {
     height: 12px;
-    margin-top: 9px;
+    /* margin-top: 9px; */
     padding: 0px;
     margin: 0px 10px 0px 0px;
+    color: #A851FF;
 }
 
 .scoreDIV {
@@ -148,4 +149,8 @@
 
 .infoContainer{
     height: 130px;
+}
+
+.botonAdquirir{
+    width: 208px;
 }

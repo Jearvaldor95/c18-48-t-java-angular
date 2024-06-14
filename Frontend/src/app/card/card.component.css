@@ -50,6 +50,7 @@
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 0.1px;
+    overflow: hidden;
 }
 
 .estrellas {
@@ -143,4 +144,8 @@
 
 .stars{
     font-size: 10px;
+}
+
+.infoContainer{
+    height: 130px;
 }

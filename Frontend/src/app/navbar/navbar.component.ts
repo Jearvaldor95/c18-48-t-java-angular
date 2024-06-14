@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'; 
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,5 +12,14 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 })
 
 export class NavBarComponent {
+  isAuthenticated: boolean = false;
+
+constructor(private authService: AuthService){}
+
+ngOnInit(): void {
+  this.authService.isLoggedIn.subscribe(loggedIn => {
+    this.isAuthenticated = loggedIn;
+  });
+}
 
 }

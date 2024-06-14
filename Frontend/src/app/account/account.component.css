@@ -1,11 +1,39 @@
+.mainDIV{
+    font-family: urbanist, sans-serif;
+}
+
 .barraLateral {
     border-right: 2px solid #F7F1FF;
     background-color: #F7F1FF;
 }
 
-.profileDIV{
-    width: 100px;
-    height: 100px;
+.profilePhotoDIV{
+    width: 85px;
+    height: 85px;
     border-radius: 100%;
     background-color: black;
+}
+
+.contenedorInterno{
+    margin-top: 107px;
+    margin-left: 69px;
+}
+
+hr{
+    width: 106px;
+    border: 2px solid #a852ffff;
+    margin: 0px;
+    padding: 0px;
+}
+
+.contenedorSuperior{
+    display: flex;
+    border-bottom: 2px solid #F7F1FF;
+    height: 141px;
+    margin-bottom: 37px;
+    padding-right: 76px;
+}
+
+.mensajeBienvenida{
+    margin-bottom: 96px;
 }

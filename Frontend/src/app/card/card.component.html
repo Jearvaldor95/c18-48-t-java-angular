@@ -3,14 +3,14 @@
         <img class="banner" src="assets/temp/banner.svg" alt="banner">
     </div>
     <div class="profilePhotoDIV">
-        {{data.fotoProfesional}}
-        <!-- <img class="profilePhoto" src="assets/temp/{{data.fotoProfesional}}" alt="profile"> -->
+        <img class="profilePhoto" [src]="data.fotoProfesional" alt="profile">
     </div>
     <div class="cardInfo">
-        <div class="row mx-0 ps-3 pe-0">
+        <div class="infoContainer row m-0 p-0">
             <div class="row noStyles">
                 <div class="col-6 noStyles d-flex">
-                    <h1 class="name d-flex noStyles">{{data.nombreProfesional + data.apellidosProfesional}}</h1>
+                    <h1 class="name d-flex noStyles text-truncate">{{data.nombreProfesional + " " +
+                        data.apellidosProfesional}}</h1>
                 </div>
                 <div class="col-iconos noStyles d-flex">
                     <img src="assets/card/check.svg" alt="verification">

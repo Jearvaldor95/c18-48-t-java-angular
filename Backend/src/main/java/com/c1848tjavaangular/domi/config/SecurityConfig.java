@@ -48,6 +48,7 @@ public class SecurityConfig {
                         authRequest ->authRequest
                                 .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/api/password/**").permitAll()
+                                .requestMatchers("/static/IMG/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(sessionManager->sessionManager

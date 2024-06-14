@@ -8,10 +8,14 @@
 }
 
 .profilePhotoDIV{
-    width: 85px;
-    height: 85px;
+    width: 70px;
+    height: 70px;
     border-radius: 100%;
     background-color: black;
+}
+
+.fotoPerfil{
+    border-radius: 100%;
 }
 
 .contenedorInterno{
@@ -36,4 +40,10 @@ hr{
 
 .mensajeBienvenida{
     margin-bottom: 96px;
+}
+
+.card-size{
+    width: 370px;
+    height: 140px;
+    margin-right: 48px;
 }

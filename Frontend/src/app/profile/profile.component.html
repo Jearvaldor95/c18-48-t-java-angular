@@ -2,19 +2,19 @@
 <div class="profile noStyles">
     <div class="portada">
         <div class="bannerDIV" *ngIf="perfil">
-            <img class="banner" [src]="perfil.portada" alt="profile banner">
+            <img class="banner" [src]="perfil?.portada" alt="profile banner">
 
         </div>
         <div class="arrowDIV"><button class="arrowButton" (click)="goBack()"><img class="arrow" src="assets/profile/arrow.svg" alt="arrow"></button></div>
         <div class="profilePhotoDIV" *ngIf="perfil">
-            <img class="profilePhoto" src="assets/profile/{{perfil.foto}}" alt="Foto de Perfil">
+            <img class="profilePhoto" [src]="perfil.foto" alt="Foto de Perfil">
         </div>
     </div>
     <div class="mb-5">
         <div class="profileInfo mb-5">
             <div class="row noStyles mb-5 row align-content-center">
                 <div class="col-3 noStyles" *ngIf="perfil">
-                    <h1>{{perfil?.nombreUsuario}}</h1>
+                    <h1>{{perfil?.nombreUsuario + " " + perfil.apellidosUsuario }}</h1>
                 </div>
                 <div class="estrellas col-4 row align-content-center">
                     <div class="p-0 m-0">

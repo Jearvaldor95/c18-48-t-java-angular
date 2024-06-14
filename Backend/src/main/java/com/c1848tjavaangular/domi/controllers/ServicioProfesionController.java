@@ -31,10 +31,10 @@ public class ServicioProfesionController {
     public ResponseEntity<?> getProfesionales(){
         List<ProfesionalDto> profesionales = servicioProfesionService.getProfesionales();
         for (ProfesionalDto profesional : profesionales) {
-            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoProfesional();
-            String fotoServicioUrl = baseUrl + "servicios/" + profesional.getFotoServicio();
-            profesional.setFotoProfesional(fotoPerfilUrl);
-            profesional.setFotoServicio(fotoServicioUrl);
+            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoPerfil();
+            String fotoPortadaUrl = baseUrl + "portada/" + profesional.getFotoPortada();
+            profesional.setFotoPerfil(fotoPerfilUrl);
+            profesional.setFotoPortada(fotoPortadaUrl);
         }
         return ResponseEntity.ok(profesionales);
     }
@@ -57,10 +57,10 @@ public class ServicioProfesionController {
     public ResponseEntity<?> getProfesionalesByNombreServicio(@RequestParam String nombreServicio){
         List<ProfesionalDto> profesionales = servicioProfesionService.getProfesionalesByNombreServicio(nombreServicio);
         for (ProfesionalDto profesional : profesionales) {
-            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoProfesional();
-            String fotoServicioUrl = baseUrl + "servicios/" + profesional.getFotoServicio();
-            profesional.setFotoProfesional(fotoPerfilUrl);
-            profesional.setFotoServicio(fotoServicioUrl);
+            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoPerfil();
+            String fotoPortadaUrl = baseUrl + "portada/" + profesional.getFotoPortada();
+            profesional.setFotoPerfil(fotoPerfilUrl);
+            profesional.setFotoPortada(fotoPortadaUrl);
         }
         return ResponseEntity.ok(profesionales);
     }
@@ -75,10 +75,10 @@ public class ServicioProfesionController {
     public ResponseEntity<?> getProfesionalByNombreServicioAndDireccion(@RequestParam String nombreServicio, @RequestParam String direccion){
         List<ProfesionalDto> profesionales = servicioProfesionService.getProfesionalByNombreServicioAndDireccion(nombreServicio, direccion);
         for (ProfesionalDto profesional : profesionales) {
-            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoProfesional();
-            String fotoServicioUrl = baseUrl + "servicios/" + profesional.getFotoServicio();
-            profesional.setFotoProfesional(fotoPerfilUrl);
-            profesional.setFotoServicio(fotoServicioUrl);
+            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoPerfil();
+            String fotoPortadaUrl = baseUrl + "portada/" + profesional.getFotoPortada();
+            profesional.setFotoPerfil(fotoPerfilUrl);
+            profesional.setFotoPortada(fotoPortadaUrl);
         }
         return ResponseEntity.ok(profesionales);
     }
@@ -87,10 +87,10 @@ public class ServicioProfesionController {
     public ResponseEntity<?> getProfesionalByDireccion(@RequestParam String direccion){
         List<ProfesionalDto> profesionales = servicioProfesionService.getProfesionalByDireccion(direccion);
         for (ProfesionalDto profesional : profesionales) {
-            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoProfesional();
-            String fotoServicioUrl = baseUrl + "servicios/" + profesional.getFotoServicio();
-            profesional.setFotoProfesional(fotoPerfilUrl);
-            profesional.setFotoServicio(fotoServicioUrl);
+            String fotoPerfilUrl = baseUrl + "fotos/" + profesional.getFotoPerfil();
+            String fotoPortadaUrl = baseUrl + "portada/" + profesional.getFotoPortada();
+            profesional.setFotoPerfil(fotoPerfilUrl);
+            profesional.setFotoPortada(fotoPortadaUrl);
         }
         return ResponseEntity.ok(profesionales);
 

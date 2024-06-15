@@ -9,23 +9,44 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class ServicioProfesionService {
 
-  private backendUrl = 'http://localhost:8095/api/servicio-profesion'
+  private backendUrl = 'https://domi-production.up.railway.app/api/servicio-profesion'
 
   constructor(private httpClient: HttpClient) { }
 
+  private datosObtenidos: { [key: string]: any } = {};
+
   data: any = {};
 
+  private token: string = '';
+
+  setToken(token: string) {
+    this.token = token;
+    localStorage.setItem('token', token);
+  }
+
+  getToken(): string {
+    return this.token || localStorage.getItem('token') || '';
+  }
+
+
   setData(key: string, value: any) {
-    this.data[key] = value;
+    this.datosObtenidos[key] = value;
   }
 
   getData(key: string): any {
-    return this.data[key];
+    return this.datosObtenidos[key];
   }
 
+  private getHeaders() {
+    return new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ´${this.getToken()}´'
+    });
+  }
 
   getServiciosProfesionales(): Observable<ServiciosUsuario[]>{
-    return this.httpClient.get<ServiciosUsuario[]>(`${this.backendUrl}`);
+    const headers = this.getHeaders();
+    return this.httpClient.get<ServiciosUsuario[]>(`${this.backendUrl}`, { headers });
   }
 
   getServicioProfesionalId(id: number){

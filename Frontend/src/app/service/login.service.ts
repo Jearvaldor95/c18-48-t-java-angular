@@ -8,7 +8,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class LoginService {
 
-  private backendUrl = 'http://localhost:8095/auth/login'
+  private backendUrl = 'https://domi-production.up.railway.app/auth/login'
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,7 +18,9 @@ export class LoginService {
       tap(response => {
         if (response && response.token) {
           localStorage.setItem('authToken', response.token);
-          //console.log(response.token);
+          // console.log("Token " + response.token);
+        } else {
+          console.log("No token in response");
         }
       })
     );

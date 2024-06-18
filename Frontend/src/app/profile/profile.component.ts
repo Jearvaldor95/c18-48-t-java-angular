@@ -11,7 +11,6 @@ import { Location } from '@angular/common';
 import { ServicioProfesionService } from '../service/servicio-profesion.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SolicitudService } from '../service/solicitud.service';
-import { Solicitud } from '../interfaces/solicitud';
 
 @Component({
   selector: 'app-profile',

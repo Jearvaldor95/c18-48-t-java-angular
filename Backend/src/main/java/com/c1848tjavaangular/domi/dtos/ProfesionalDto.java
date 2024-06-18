@@ -14,7 +14,7 @@ public class ProfesionalDto {
     private String nombreProfesional;
     private String apellidosProfesional;
     private String direccionProfesional;
-    private String fotoProfesional;
-    private String fotoServicio;
+    private String fotoPerfil;
+    private String fotoPortada;
     private String servicios;
 }

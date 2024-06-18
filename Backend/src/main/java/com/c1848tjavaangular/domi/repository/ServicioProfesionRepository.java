@@ -13,8 +13,8 @@ import java.util.List;
 public interface ServicioProfesionRepository extends JpaRepository<ServicioProfesion, Integer> {
 
     // Todos los usuarios profesionales con sus servicios
-    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
-            "MIN(s.foto) AS fotoServicio, " +
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoPerfil, " +
+            "u.portada AS fotoPortada, " +
             "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
             "FROM usuarios u " +
             "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
@@ -30,8 +30,8 @@ public interface ServicioProfesionRepository extends JpaRepository<ServicioProfe
     List<ServiciosProfesionalDto> findAllServiciosProfesionByIdUsuario(Integer idUsuario);
 
     // Usuarios profesionales con sus servicios por nombre servicio
-    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
-            "MIN(s.foto) AS fotoServicio, " +
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoPerfil, " +
+            "u.portada AS fotoPortada, " +
             "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
             "FROM usuarios u " +
             "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
@@ -42,8 +42,8 @@ public interface ServicioProfesionRepository extends JpaRepository<ServicioProfe
     List<Object[]> findProfesionalesByNombreServicio(String nombreServicio);
 
     // Usuarios profesionales con sus servicios por nombre servicio y direccion
-    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
-            "MIN(s.foto) AS fotoServicio, " +
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoPerfil, " +
+            "u.portada AS fotoPortada, " +
             "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
             "FROM usuarios u " +
             "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +
@@ -54,8 +54,8 @@ public interface ServicioProfesionRepository extends JpaRepository<ServicioProfe
     List<Object[]> findProfesionalByNombreServicioAndDireccion(String nombreServicio, String direccionUsuario);
 
     // Usuarios profesionales con sus servicios por direccion
-    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoUsuario, " +
-            "MIN(s.foto) AS fotoServicio, " +
+    @Query(value = "SELECT u.idusuario, u.nombre, u.apellidos, u.direccion, u.foto AS fotoPerfil, " +
+            "u.portada AS fotoPortada, " +
             "GROUP_CONCAT(s.nombre SEPARATOR ', ') AS servicios " +
             "FROM usuarios u " +
             "LEFT JOIN servicio_profesion sp ON u.idusuario = sp.idusuario " +

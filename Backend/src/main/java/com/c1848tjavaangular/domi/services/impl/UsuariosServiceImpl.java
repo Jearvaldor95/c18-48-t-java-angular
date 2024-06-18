@@ -67,14 +67,6 @@ public class UsuariosServiceImpl implements UsuariosService {
     }
 
     @Override
-    public UsuariosDto upload(Integer id,UsuariosDto usuariosDto) {
-        Usuarios usuario = usuariosRepository.findById(id)
-                .orElseThrow(()-> new AppNotFoundException("User not found!"));
-        usuariosMapper.updateUsuario(usuario,usuariosDto);
-        return usuariosMapper.toUsuariosDto(usuariosRepository.save(usuario));
-    }
-
-    @Override
     public String getTelefono(Integer idUsuario) {
         return usuariosRepository.findTelefonoByIdUsuarios(idUsuario);
     }

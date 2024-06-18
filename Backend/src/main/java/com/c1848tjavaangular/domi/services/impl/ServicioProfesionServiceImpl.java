@@ -39,11 +39,11 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
             String nombre = (String) row[1];
             String apellidos = (String) row[2];
             String direccion = (String) row[3];
-            String fotoUsuario = (String) row[4];
-            String fotoServicio = (String) row[5];
+            String fotoPerfil = (String) row[4];
+            String fotoPortada = (String) row[5];
             String servicios = (String) row[6];
 
-            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoUsuario, fotoServicio, servicios);
+            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoPerfil, fotoPortada, servicios);
             result.add(dto);
         }
 
@@ -81,11 +81,11 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
             String nombre = (String) row[1];
             String apellidos = (String) row[2];
             String direccion = (String) row[3];
-            String fotoUsuario = (String) row[4];
-            String fotoServicio = (String) row[5];
+            String fotoPerfil = (String) row[4];
+            String fotoPortada = (String) row[5];
             String servicios = (String) row[6];
 
-            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoUsuario, fotoServicio, servicios);
+            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoPerfil, fotoPortada, servicios);
             result.add(dto);
         }
 
@@ -102,11 +102,11 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
             String nombre = (String) row[1];
             String apellidos = (String) row[2];
             String direccion = (String) row[3];
-            String fotoUsuario = (String) row[4];
-            String fotoServicio = (String) row[5];
+            String fotoPerfil = (String) row[4];
+            String fotoPortada = (String) row[5];
             String servicios = (String) row[6];
 
-            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoUsuario, fotoServicio, servicios);
+            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoPerfil, fotoPortada, servicios);
             result.add(dto);
         }
 
@@ -123,11 +123,11 @@ public class ServicioProfesionServiceImpl implements ServicioProfesionService{
             String nombre = (String) row[1];
             String apellidos = (String) row[2];
             String direccion = (String) row[3];
-            String fotoUsuario = (String) row[4];
-            String fotoServicio = (String) row[5];
+            String fotoPerfil = (String) row[4];
+            String fotoPortada = (String) row[5];
             String servicios = (String) row[6];
 
-            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoUsuario, fotoServicio, servicios);
+            ProfesionalDto dto = new ProfesionalDto(idUsuario, nombre, apellidos, direccion, fotoPerfil, fotoPortada, servicios);
             result.add(dto);
         }
 

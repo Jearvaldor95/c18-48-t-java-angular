@@ -2,7 +2,7 @@
 <div class="profile noStyles">
     <div class="portada">
         <div class="bannerDIV" *ngIf="perfil">
-            <img class="banner" [src]="perfil?.portada" alt="profile banner">
+            <img class="banner" [src]="perfil.portada" alt="profile banner">
 
         </div>
         <div class="arrowDIV"><button class="arrowButton" (click)="goBack()"><img class="arrow" src="assets/profile/arrow.svg" alt="arrow"></button></div>
@@ -14,7 +14,7 @@
         <div class="profileInfo mb-5">
             <div class="row noStyles mb-5 row align-content-center">
                 <div class="col-3 noStyles" *ngIf="perfil">
-                    <h1>{{perfil?.nombreUsuario + " " + perfil.apellidosUsuario }}</h1>
+                    <h1>{{perfil.nombreUsuario + " " + perfil.apellidosUsuario }}</h1>
                 </div>
                 <div class="estrellas col-4 row align-content-center">
                     <div class="p-0 m-0">
@@ -38,7 +38,7 @@
                         <img class="iconos" src="assets/profile/maletin.svg" alt="maletin">
                     </div>
                     <div class="col-11 noStyles" *ngIf="perfil">
-                        <p class="servicioPerfil">{{perfil?.nombreServicio}}</p>
+                        <p class="servicioPerfil">{{perfil.nombreServicio}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +46,7 @@
                         <img class="iconos" src="assets/profile/marcador.svg" alt="marcador">
                     </div>
                     <div class="noStyles col-11" *ngIf="perfil">
-                        <p class="servicioPerfil">{{perfil?.direccionUsuario}}</p>
+                        <p class="servicioPerfil">{{perfil.direccionUsuario}}</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <h2>Sobre mí</h2>
                 </div>
                 <div class="mb-5" *ngIf="perfil">
-                    <p class="profileResume">{{perfil?.sobreMi}}</p>
+                    <p class="profileResume">{{perfil.sobreMi}}</p>
                 </div>
             </div>
             <div class="row pt-5 mb-5 text-center">
@@ -97,9 +97,9 @@
                     <p class="titleDark">Servicios ofrecidos</p>
                 </div>
                 <div class="row">
-                    <!-- <div *ngFor="let item of data" class="col-4 px-0 mx-0 my-0 pt-0 pb-5 d-flex justify-content-center">
-                        <app-profile-services [data]="item"></app-profile-services>
-                    </div> -->
+                     <div *ngFor="let item of servicios" class="col-4 px-0 mx-0 my-0 pt-0 pb-5 d-flex justify-content-center">
+                        <app-profile-services [servicios]="item"></app-profile-services>
+                    </div> 
                 </div>
             </div>
         </div>

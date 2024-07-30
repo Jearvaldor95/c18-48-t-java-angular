@@ -7,7 +7,8 @@ import { Registro } from '../interfaces/registro';
 })
 export class RegistroService {
 
-  private backendUrl = 'https://domi-production.up.railway.app/auth/registro'
+  //private backendUrl = 'https://domi-production.up.railway.app/auth/registro'
+  private backendUrl = 'http://localhost:8095/auth/registro'
 
   constructor(private httpClient: HttpClient) { }
 

@@ -8,7 +8,8 @@ import { Observable, tap } from 'rxjs';
 })
 export class LoginService {
 
-  private backendUrl = 'https://domi-production.up.railway.app/auth/login'
+  //private backendUrl = 'https://domi-production.up.railway.app/auth/login'
+  private backendUrl = 'http://localhost:8095/auth/login'
 
   constructor(private httpClient: HttpClient) { }
 

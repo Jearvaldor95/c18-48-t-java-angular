@@ -1,4 +1,4 @@
-export interface ServiciosUsuario {
+export interface ServiciosProfesional {
     idServicioProfesion: number;
     nombreUsuario: String;
     apellidosUsuario: String;

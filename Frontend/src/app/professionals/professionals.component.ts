@@ -7,17 +7,24 @@ import { NavBarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CardComponent } from '../card/card.component';
 import { ServicioProfesionService } from '../service/servicio-profesion.service';
+import { Profesional } from '../interfaces/profesional';
+import { FiltrarPorDireccionPipe } from "../pipes/filtrar-por-direccion.pipe";
+import { FormsModule } from '@angular/forms';
+import { FiltrarPorServiciosPipe } from "../pipes/filtrar-por-servicios.pipe";
 
 @Component({
-  selector: 'app-professionals',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBarComponent, FooterComponent, CardComponent, CommonModule ],
-  templateUrl: './professionals.component.html',
-  styleUrl: './professionals.component.css'
+    selector: 'app-professionals',
+    standalone: true,
+    templateUrl: './professionals.component.html',
+    styleUrl: './professionals.component.css',
+    imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBarComponent, FooterComponent, CardComponent, CommonModule, FormsModule, FiltrarPorDireccionPipe, FiltrarPorServiciosPipe]
 })
 
 export class ProfessionalsComponent {
-  data: any[] = [];
+  profesional: Profesional[] = [];
+
+  filterDireccion = '';
+  filterServicios = '';
 
   constructor(private servicioProfesion: ServicioProfesionService) { }
 
@@ -27,8 +34,8 @@ export class ProfessionalsComponent {
 
   getServiciosProfesional(){
     this.servicioProfesion.getServiciosProfesionales().subscribe(data => {
-      this.data = data;
-      console.log(this.data);
+      this.profesional = data;
+      console.log(this.profesional);
     },
     error => {
       console.error('Error al obtener los datos:', error);

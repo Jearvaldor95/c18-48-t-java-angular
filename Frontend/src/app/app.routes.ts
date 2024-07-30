@@ -12,6 +12,7 @@ import { AccountComponent } from './account/account.component';
 import { CardComponent } from './card/card.component';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { ProfileServicesComponent } from './profile-services/profile-services.component';
+import { MensajeriaComponent } from './mensajeria/mensajeria.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ export const routes: Routes = [
     { path: 'card', component: CardComponent },
     { path: 'forgotPass', component: ForgotPassComponent },
     { path: 'profileServicesCard', component: ProfileServicesComponent },
+    { path: 'mensajeria', component: MensajeriaComponent},
     // siempre ultimo
     { path: '**', component: PageNotFoundComponent },
 ];
